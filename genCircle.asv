@@ -1,0 +1,9 @@
+%% Fucntion to generate circle
+function [circX, circY]=genCircle(center,rad,Ts)
+%center=[x1,y1] rad=radius (all in mm)
+thetad=0.5;
+T=2*pi/thetad;
+
+theta=(0:0.01:2*pi);
+circX=center(1)+rad*cos(theta);
+circY=center(2)+rad*sin(theta);

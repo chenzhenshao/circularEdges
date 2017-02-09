@@ -1,0 +1,3054 @@
+-- ****************************************************************************
+--
+--  Trace file: positionControlLoopCircle.trc
+--
+--  RTI1103 6.5 (10-May-2010)
+--  Tue Jan 24 00:13:25 2017
+--
+--  Used options:
+--    TRCGenerateVirtualBlocks      = 1
+--    TRCGenerateLabels             = 1
+--    TRCMaskParameters             = 0
+--    TRCGenerateStates             = 0
+--    TRCGenerateDerivatives        = 0
+--    TRCGenerateParamValues        = 0
+--    TRCGenerateApplicationKeyword = 0
+--    EnableRTWCodeReuse            = 1
+--    TRCOnlyGlobals                = 0
+--
+--  Trace file format: 2
+--
+--  (c) Copyright 2008, dSPACE GmbH. All rights reserved.
+--
+-- ****************************************************************************
+
+-- ******** Keywords **********************************************************
+
+-- _application "positionControlLoopCircle.map"
+
+_genname     "RTI"
+_genversion  "6.5"
+_gendate     "01/24/2017 00:13:28"
+_description ""
+_author      "RTI1103 6.5 (10-May-2010)"
+_model       "positionControlLoopCircle.mdl"
+
+-- Default data type formats
+_floating_point_type(64,IEEE)
+_integer_type(32)
+
+-- No Data Capture blocks within model: use base sample time as sampling period
+sampling_period[0]
+{
+  value:       0.01
+  alias:       "HostService"
+  increment:   0.01
+  unit:        "s"
+}
+
+
+-- Type definitions for arrays
+typedef positionControlLoopCircle_ArrayDT0_2 flt(64,IEEE)[2]
+typedef positionControlLoopCircle_ArrayDT0_2514 flt(64,IEEE)[2514]
+typedef positionControlLoopCircle_ArrayDT0_2514_Col col flt(64,IEEE)[2514]
+
+
+-- ******** Simulation control variables **************************************
+
+finalTime
+{
+ type:  flt(64,IEEE)*
+ alias: "finalTime"
+ desc:  "Simulation stop time. When reached, simState switches to STOP."
+ flags:  SYSTEM|READONLY
+ unit:  "s"
+}
+
+currentTime
+{
+ type:  flt(64,IEEE)*
+ alias: "currentTime"
+ desc:  "Current simulation time. Increments with execution of Timer Task 1."
+ flags: SYSTEM|READONLY
+ unit:  "s"
+}
+
+modelStepSize
+{
+ type:  flt(64,IEEE)
+ alias: "modelStepSize"
+ desc:  "Fixed step size of the model, sample time of Timer Task 1."
+ flags: SYSTEM|READONLY
+ unit:  "s"
+}
+
+simState
+{
+ type:  int(32)
+ alias: "simState"
+ desc:  "Simulation state: STOP=0 PAUSE=1 RUN=2"
+ flags: SYSTEM
+ unit:  "-"
+}
+
+msg_last_error_no
+{
+ type:  uint(32)
+ alias: "errorNumber"
+ desc:  "Error number of last error message (zero if no error)."
+ unit:  "-"
+ flags: SYSTEM|READONLY
+}
+
+rtiAssertionMode
+{
+ type:  int(32)
+ alias: "rtiAssertionMode"
+ desc:  "Assertion Mode: OFF=0 WARN=1 STOP=2"
+ flags: SYSTEM
+ unit:  "-"
+}
+
+
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+{
+ flags: COLLAPSED
+}
+	group "2pi45" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[2524]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "2pi45"
+
+	group "B" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[2522]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "B"
+
+	group "B1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5047]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "B1"
+
+	group "DA On-Off" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5049]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA On-Off"
+
+	group "ENC Reset" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5052]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ENC Reset"
+
+	group "J" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[2521]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "J"
+
+	group "J1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5046]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "J1"
+
+	group "centerx" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5041]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "centerx"
+
+	group "centerx1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[2523]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "centerx1"
+
+	group "centery" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[2525]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "centery"
+
+	group "input" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "input"
+
+	group "input2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5040]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "input2"
+
+	group "startX" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "startX"
+
+	group "zeta1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5048]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "zeta1"
+
+	group "zeta2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlLoopCircle_P_real_T_0[5042]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "zeta2"
+
+	group "Discrete-Time\nIntegrator" -- block-group
+	{
+	 block: "DiscreteIntegrator"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[1]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "gainval"
+		 flags:   PARAM
+		}
+		p_positionControlLoopCircle_P_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialCondition"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Discrete-Time\nIntegrator"
+
+	group "Fcn" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[62]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Fcn"
+
+	group "Fcn1" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[37]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Fcn1"
+
+	group "ADC Gain" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[72]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5056]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain"
+
+	group "ADC Gain1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[75]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5058]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain1"
+
+	group "ADC Gain2" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[78]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5060]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain2"
+
+	group "DA GainY" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[66]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5051]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA GainY"
+
+	group "DA GainY1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[64]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5050]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA GainY1"
+
+	group "GainFx" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[73]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5057]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFx"
+
+	group "GainFy" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[76]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5059]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFy"
+
+	group "GainFz" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[79]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5061]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFz"
+
+	group "currentNegated" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[68]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5053]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "currentNegated"
+
+	group "differentiated" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[69]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5054]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "differentiated"
+
+	group "differentiated1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[70]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[5055]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "differentiated1"
+
+	group "index" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_P_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "index"
+
+	group "Logical\nOperator" -- block-group
+	{
+	 block: "Logic"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_boolean_T_1[1]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Logical\nOperator"
+
+	group "Logical\nOperator1" -- block-group
+	{
+	 block: "Logic"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_boolean_T_1[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Logical\nOperator1"
+
+	group "Product" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[65]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product"
+
+	group "Product1" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[63]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product1"
+
+	group "Product2" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product2"
+
+	group "Product3" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[0]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product3"
+
+	group "Product4" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product4"
+
+	group "Product5" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product5"
+
+	group "Scope" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[34]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope"
+
+	group "Scope1" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[37]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope1"
+
+	group "Scope2" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[61]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope2"
+
+	group "Scope3" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[62]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope3"
+
+	group "Scope4" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[18]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope4"
+
+	group "xerror" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[48]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "xerror"
+
+	group "xpos" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[16]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "xpos"
+
+	group "yerror" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "yerror"
+
+	group "ypos" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "ypos"
+
+	group "circX" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlLoopCircle_P_real_T_0[2526]
+		{
+		 type:    positionControlLoopCircle_ArrayDT0_2514_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlLoopCircle_P_real_T_0[2526]
+		{
+		 type:    positionControlLoopCircle_ArrayDT0_2514*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circX"
+
+	group "circY" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlLoopCircle_B_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[2]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlLoopCircle_P_real_T_0[5]
+		{
+		 type:    positionControlLoopCircle_ArrayDT0_2514_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlLoopCircle_P_real_T_0[5]
+		{
+		 type:    positionControlLoopCircle_ArrayDT0_2514*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circY"
+
+  
+  
+	group " EncoderX" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[46]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Pos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[47]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "DeltaPos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "Reset" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "Reset"
+
+		group "Demux" -- block-group
+		{
+		 block: "Demux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[46]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[47]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out2"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Demux"
+
+		group "EncoderGain" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[44]
+			{
+			 type:    positionControlLoopCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_P_real_T_0[5043]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "EncoderGain"
+
+		group "convert2radians " -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[46]
+			{
+			 type:    positionControlLoopCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_P_real_T_0[5044]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "convert2radians "
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[38]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[39]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[40]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[41]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+		group "Add" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[42]
+			{
+			 type:    positionControlLoopCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Add"
+
+  
+  
+		group "DS1103ENC_POS_C2" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlLoopCircle_B_real_T_0[40]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[41]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "DS1103ENC_POS_C2"
+  
+  
+		group "DS1103ENC_SET_POS_C2" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "DS1103ENC_SET_POS_C2"
+  
+  
+		group "_DS1103ENC_POS_C1" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlLoopCircle_B_real_T_0[38]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[39]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "_DS1103ENC_POS_C1"
+  
+  
+		group "_DS1103ENC_SET_POS_C1" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "_DS1103ENC_SET_POS_C1"
+
+
+	endgroup -- subsystem-group " EncoderX"
+  
+  
+	group " EncoderY" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Pos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "DeltaPos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "Reset" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "Reset"
+
+		group "Demux" -- block-group
+		{
+		 block: "Demux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out2"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Demux"
+
+		group "EncoderGain" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[8]
+			{
+			 type:    positionControlLoopCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_P_real_T_0[2519]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "EncoderGain"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux"
+
+  
+  
+		group "DS1103ENC_POS_C3" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlLoopCircle_B_real_T_0[6]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[7]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "DS1103ENC_POS_C3"
+  
+  
+		group "DS1103ENC_SET_POS_C3" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "DS1103ENC_SET_POS_C3"
+
+
+	endgroup -- subsystem-group " EncoderY"
+  
+  
+	group "DS1103ADC_C17" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[71]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C17"
+  
+  
+	group "DS1103ADC_C18" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[74]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C18"
+  
+  
+	group "DS1103ADC_C19" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[77]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C19"
+  
+  
+	group "DS1103ENC_SETUP" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "DS1103ENC_SETUP"
+  
+  
+	group "RTI Data" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "RTI Data"
+  
+  
+	group "Subsystem" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[22]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "omegay"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[36]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "omegax"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlLoopCircle_B_real_T_0[18]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "y" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[5]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "y"
+
+		group "centy" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "centy"
+
+		group "x" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[16]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "x"
+
+		group "centx" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "centx"
+
+		group "omegaNormal" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "omegaNormal"
+
+		group "omegaTgt" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "omegaTgt"
+
+		group "Abs" -- block-group
+		{
+		 block: "Abs"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Abs"
+
+		group "Abs1" -- block-group
+		{
+		 block: "Abs"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Abs1"
+
+		group "Fcn" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Fcn"
+
+		group "Fcn1" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Fcn1"
+
+		group "Fcn2" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[67]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Fcn2"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1{SubArray1}
+			-- Skipping output Out1{SubArray2}
+			p_positionControlLoopCircle_B_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray3}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray4}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+		group "Scope" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Scope"
+
+		group "Scope1" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[21]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Scope1"
+
+		group "Scope2" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+
+			-- Skipping inport In1
+
+
+
+
+		endgroup -- block-group "Scope2"
+
+		group "Scope3" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+
+			-- Skipping inport In1
+
+
+
+
+		endgroup -- block-group "Scope3"
+
+		group "Scope4" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[67]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Scope4"
+
+		group "Add1" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[17]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Add1"
+
+		group "Add3" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Add3"
+
+		group "Trigonometric\nFunction" -- block-group
+		{
+		 block: "Trigonometry"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[18]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Trigonometric\nFunction"
+
+		group "Trigonometric\nFunction1" -- block-group
+		{
+		 block: "Trigonometry"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[20]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Trigonometric\nFunction1"
+
+		group "Trigonometric\nFunction2" -- block-group
+		{
+		 block: "Trigonometry"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[19]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Trigonometric\nFunction2"
+
+
+
+	endgroup -- subsystem-group "Subsystem"
+  
+  
+	group "Subsystem1" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[61]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "J" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "J"
+
+		group "B" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "B"
+
+		group "wnx" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "wnx"
+
+		group "zeta" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "zeta"
+
+		group "xerr" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[48]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "xerr"
+
+		group "Display" -- block-group
+		{
+		 block: "Display"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[61]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Display"
+
+		group "Display1" -- block-group
+		{
+		 block: "Display"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[48]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Display1"
+
+		group "Drterm2" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[50]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Drterm2"
+
+		group "Nrterm1" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[56]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Nrterm1"
+
+		group "Nrterm2" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Nrterm2"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1{SubArray1}
+			-- Skipping output Out1{SubArray2}
+			p_positionControlLoopCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray3}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			-- Skipping output Out1{SubArray4}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[56]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+  
+  
+		group "Transfer Fcn\nDirect Form II\nTime Varying" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlLoopCircle_B_real_T_0[61]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "y"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+			group "u" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "u"
+
+			group "Num" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[56]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray1}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[57]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray2}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Num"
+
+			group "Den No Lead" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[50]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Den No Lead"
+
+			group "Downcast" -- block-group
+			{
+			 block: "DataTypeConversion"
+			 desc:  "\nReduce from CPU Size\n to Global RAM Size"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[61]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Downcast"
+
+			group "Downcast1" -- block-group
+			{
+			 block: "DataTypeConversion"
+			 desc:  "\nReduce from CPU Size\n to Global RAM Size"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[53]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Downcast1"
+
+			group "Mux" -- block-group
+			{
+			 block: "Mux"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[53]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray1}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[49]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray2}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Mux"
+
+			group "DataTypeProp" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[61]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "DataTypeProp"
+
+			group "DataTypeProp1" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[48]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[53]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "DataTypeProp1"
+
+			group "Tapped Delay" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[49]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_positionControlLoopCircle_P_real_T_0[5045]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Tapped Delay"
+
+			group "Sum" -- block-group
+			{
+			 block: "Sum"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[52]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum"
+
+			group "Dot1" -- block-group
+			{
+			 block: "DotProduct"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[51]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Dot1"
+
+			group "Dot2" -- block-group
+			{
+			 block: "DotProduct"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[60]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Dot2"
+
+
+
+		endgroup -- subsystem-group "Transfer Fcn\nDirect Form II\nTime Varying"
+
+
+	endgroup -- subsystem-group "Subsystem1"
+  
+  
+	group "Subsystem2" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlLoopCircle_B_real_T_0[34]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "yerr" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "yerr"
+
+		group "J" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "J"
+
+		group "B" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "B"
+
+		group "wny" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "wny"
+
+		group "zeta" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "zeta"
+
+		group "Display" -- block-group
+		{
+		 block: "Display"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[34]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Display"
+
+		group "Display1" -- block-group
+		{
+		 block: "Display"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "Display1"
+
+		group "Drterm2" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Drterm2"
+
+		group "Nrterm1" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Nrterm1"
+
+		group "Nrterm2" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Nrterm2"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1{SubArray1}
+			-- Skipping output Out1{SubArray2}
+			p_positionControlLoopCircle_B_real_T_0[22]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray3}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			-- Skipping output Out1{SubArray4}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlLoopCircle_B_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlLoopCircle_B_real_T_0[30]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+  
+  
+		group "Transfer Fcn\nDirect Form II\nTime Varying" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlLoopCircle_B_real_T_0[34]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "y"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+			group "u" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "u"
+
+			group "Num" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[29]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray1}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[30]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray2}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Num"
+
+			group "Den No Lead" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[23]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Den No Lead"
+
+			group "Downcast" -- block-group
+			{
+			 block: "DataTypeConversion"
+			 desc:  "\nReduce from CPU Size\n to Global RAM Size"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[34]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Downcast"
+
+			group "Downcast1" -- block-group
+			{
+			 block: "DataTypeConversion"
+			 desc:  "\nReduce from CPU Size\n to Global RAM Size"
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Downcast1"
+
+			group "Mux" -- block-group
+			{
+			 block: "Mux"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray1}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[11]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1{SubArray2}"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Mux"
+
+			group "DataTypeProp" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[34]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "DataTypeProp"
+
+			group "DataTypeProp1" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In1"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[10]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In2"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+				p_positionControlLoopCircle_B_real_T_0[26]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "In3"
+				 desc:    ""
+				 flags:   SINK|READONLY
+				}
+
+
+
+			endgroup -- block-group "DataTypeProp1"
+
+			group "Tapped Delay" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[11]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+				p_positionControlLoopCircle_P_real_T_0[2520]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "InitialCondition"
+				 flags:   PARAM
+				}
+
+
+			endgroup -- block-group "Tapped Delay"
+
+			group "Sum" -- block-group
+			{
+			 block: "Sum"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[25]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Sum"
+
+			group "Dot1" -- block-group
+			{
+			 block: "DotProduct"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[24]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Dot1"
+
+			group "Dot2" -- block-group
+			{
+			 block: "DotProduct"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlLoopCircle_B_real_T_0[33]
+				{
+				 type:    flt(64,IEEE)*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Dot2"
+
+
+
+		endgroup -- subsystem-group "Transfer Fcn\nDirect Form II\nTime Varying"
+
+
+	endgroup -- subsystem-group "Subsystem2"
+  
+  
+	group "controlX" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "controlX"
+  
+  
+	group "controlY" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "controlY"
+
+
+
+
+endgroup -- "Model Root"
+-- ******** Model Root Parameters from model_mrp.trc **************************
+-- Model Root Parameters file is only generated if option TRCMaskParameters is enabled
+
+-- ******** Tunable Parameters ************************************************
+
+-- InlineParameters is off: no separate group for Tunable Parameters
+
+
+-- ******** State Machine Data ************************************************
+
+-- No Stateflow chart within the model.
+
+
+-- ******** Data Store Memories ***********************************************
+
+-- No Data Store Memories within the model.
+
+
+-- ******** Labels ************************************************************
+
+group "Labels"
+{
+ flags: COLLAPSED
+}
+
+endgroup
+
+-- ******** RTT Dynamic Variables *********************************************
+
+-- Generation of RTT Dynamic Variables turned off with EnableRealTimeTesting option.
+
+-- ******** User variables from model_usr.trc *********************************
+
+-- RTI_USR_TRC_BEGIN
+
+-- No user file positionControlLoopCircle_usr.trc found.
+
+-- RTI_USR_TRC_END
+
+-- ******** Task Information variables ****************************************
+
+group "Task Info"
+{
+ flags: COLLAPSED
+}
+  group "Timer Task 1"
+  {
+   flags: COLLAPSED
+  }
+
+  pRti_TIMERA_STime
+  {
+   type:  flt(64,IEEE)*
+   alias: "sampleTime"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_TTime
+  {
+   type:  flt(64,IEEE)*
+   alias: "turnaroundTime"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_TState
+  {
+   type:  int(32)*
+   alias: "state"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_OType
+  {
+   type:  int(32)*
+   alias: "overrunCheckType"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_OMax
+  {
+   type:  int(32)*
+   alias: "overrunQueueMax"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_ORpt
+  {
+   type:  int(32)*
+   alias: "overrunQueueCount"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_OCnt
+  {
+   type:  int(32)*
+   alias: "overrunCount"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_TCnt
+  {
+   type:  flt(64,IEEE)*
+   alias: "taskCallCount"
+   flags: SYSTEM|READONLY
+  }
+  pRti_TIMERA_Prio
+  {
+   type:  int(32)*
+   alias: "priority"
+   flags: SYSTEM|READONLY
+  }
+  endgroup
+
+endgroup
+
+-- ******** [EOF] *************************************************************
+
+
+
