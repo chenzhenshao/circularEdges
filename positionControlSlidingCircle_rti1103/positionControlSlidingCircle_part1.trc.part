@@ -1,0 +1,3915 @@
+-- ******** Model variables ***************************************************
+
+group "Model Root"
+{
+ flags: COLLAPSED
+}
+	group "Matrix\nConcatenate2" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[37]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Matrix\nConcatenate2"
+
+	group "Matrix\nConcatenate3" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[39]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Matrix\nConcatenate3"
+
+	group "coeffmat2X2" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[41]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "coeffmat2X2"
+
+	group "epsilon2X1" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[61]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilon2X1"
+
+	group "epsilond2X1" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[69]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilond2X1"
+
+	group "rem2X1" -- block-group
+	{
+	 block: "Concatenate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[107]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "rem2X1"
+
+	group "-Minv" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[87428]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "-Minv"
+
+	group "DA On-Off" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[87444]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA On-Off"
+
+	group "ENC Reset" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[87459]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ENC Reset"
+
+	group "Kd1,1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[134]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87467]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kd1,1"
+
+	group "Kd1,3" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[65]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87440]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kd1,3"
+
+	group "Kd1,4" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[65]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87442]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kd1,4"
+
+	group "Kd2,3" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[65]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87441]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kd2,3"
+
+	group "Kd2,4" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[65]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87443]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kd2,4"
+
+	group "Kp1,1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[57]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87436]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kp1,1"
+
+	group "Kp1,2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[57]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87438]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kp1,2"
+
+	group "Kp2,1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[57]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87437]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kp2,1"
+
+	group "Kp2,2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[57]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87439]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Kp2,2"
+
+	group "Ks 2,2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[49]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87435]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ks 2,2"
+
+	group "Ks1,1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[49]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87432]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ks1,1"
+
+	group "Ks1,2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[49]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87433]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ks1,2"
+
+	group "Ks2,1" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[49]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87434]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Ks2,1"
+
+	group "input" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "input"
+
+	group "input2" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[29152]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "input2"
+
+	group "r0" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[87423]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "r0"
+
+	group "startX" -- block-group
+	{
+	 block: "Constant"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		-- Skipping output Out1
+		p_positionControlSlidingCircle_P_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Value"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "startX"
+
+	group "Demux" -- block-group
+	{
+	 block: "Demux"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[113]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[114]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out2"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Demux"
+
+	group "Discrete-Time\nIntegrator" -- block-group
+	{
+	 block: "DiscreteIntegrator"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[19]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "gainval"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[16]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialCondition"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Discrete-Time\nIntegrator"
+
+	group "ForceMag" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[133]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "ForceMag"
+
+	group "coeffmat(1,1)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[37]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "coeffmat(1,1)"
+
+	group "coeffmat(1,2)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[37]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "coeffmat(1,2)"
+
+	group "coeffmat(2,1)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[39]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "coeffmat(2,1)"
+
+	group "coeffmat(2,2)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[39]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "coeffmat(2,2)"
+
+	group "epsilon(1)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[61]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilon(1)"
+
+	group "epsilon(2)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[61]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilon(2)"
+
+	group "epsilond(1)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[69]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilond(1)"
+
+	group "epsilond(2)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[69]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "epsilond(2)"
+
+	group "rem(1)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[107]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "rem(1)"
+
+	group "rem(2)" -- block-group
+	{
+	 block: "Fcn"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[107]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "rem(2)"
+
+	group "ADC Gain" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[125]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87461]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain"
+
+	group "ADC Gain1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[127]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87462]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain1"
+
+	group "ADC Gain2" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[129]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87463]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "ADC Gain2"
+
+	group "DA GainY" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[116]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87445]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA GainY"
+
+	group "DA GainY1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[120]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87452]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "DA GainY1"
+
+	group "GainFx" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[130]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87464]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFx"
+
+	group "GainFy" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[131]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87465]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFy"
+
+	group "GainFz" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[132]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87466]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "GainFz"
+
+	group "currentNegated" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[123]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87460]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "currentNegated"
+
+	group "differentiated" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[16]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "differentiated"
+
+	group "differentiated1" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[14]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[3]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "differentiated1"
+
+	group "index" -- block-group
+	{
+	 block: "Gain"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[17]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Gain"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "index"
+
+	group "Logical\nOperator" -- block-group
+	{
+	 block: "Logic"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_boolean_T_1[1]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Logical\nOperator"
+
+	group "Logical\nOperator1" -- block-group
+	{
+	 block: "Logic"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_boolean_T_1[0]
+		{
+		 type:    uint(8)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Logical\nOperator1"
+
+	group "Mux" -- block-group
+	{
+	 block: "Mux"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[130]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray1}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[131]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray2}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[132]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray3}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Mux"
+
+	group "-Minv Ks" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[53]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "-Minv Ks"
+
+	group "-Minv Ks (Kp epsilon+Kd epsilond)" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[75]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "-Minv Ks (Kp epsilon+Kd epsilond)"
+
+	group "Kd epsilond" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[71]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Kd epsilond"
+
+	group "Kp epsilon" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[63]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Kp epsilon"
+
+	group "Kp epsilond" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[77]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Kp epsilond"
+
+	group "Product" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[115]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product"
+
+	group "Product1" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[119]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product1"
+
+	group "Product2" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[26]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product2"
+
+	group "Product3" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[18]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product3"
+
+	group "Product4" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[25]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product4"
+
+	group "Product5" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[22]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product5"
+
+	group "Product6" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[31]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product6"
+
+	group "Product7" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[35]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product7"
+
+	group "Product8" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[29]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product8"
+
+	group "Product9" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[33]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Product9"
+
+	group "matrix mult" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[105]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "matrix mult"
+
+	group "matrix mult1" -- block-group
+	{
+	 block: "Product"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[113]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_1_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "matrix mult1"
+
+	group "Saturation" -- block-group
+	{
+	 block: "Saturate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[117]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87446]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "UpperLimit"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87447]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "LowerLimit"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Saturation"
+
+	group "Saturation1" -- block-group
+	{
+	 block: "Saturate"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[121]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87453]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "UpperLimit"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87454]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "LowerLimit"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "Saturation1"
+
+	group "Scope" -- block-group
+	{
+	 block: "Scope"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[113]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_1_Col*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+
+
+	endgroup -- block-group "Scope"
+
+	group "Pseudoinverse" -- block-group
+	{
+	 block: "S-Function"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[45]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Pseudoinverse"
+
+	group "Add" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[73]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add"
+
+	group "Add1" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[79]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add1"
+
+	group "Add2" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[109]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "Add2"
+
+	group "xposr" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[23]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "xposr"
+
+	group "yposr" -- block-group
+	{
+	 block: "Sum"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[27]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+
+	endgroup -- block-group "yposr"
+
+	group "circX1" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[21]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[18]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[18]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circX1"
+
+	group "circXd1" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[28]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[29153]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[29153]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circXd1"
+
+	group "circXdd1" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[32]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[58287]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[58287]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circXdd1"
+
+	group "circY" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[24]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[14585]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[14585]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circY"
+
+	group "circYd" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[30]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[43720]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[43720]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circYd"
+
+	group "circYdd" -- block-group
+	{
+	 block: "LookupNDDirect"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[34]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[20]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "In1"
+		 desc:    ""
+		 flags:   SINK|READONLY
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[72854]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567_Col*
+		 alias:   "LookUpTableData"
+		 flags:   PARAM
+		}
+
+		p_positionControlSlidingCircle_P_real_T_0[72854]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_14567*
+		 alias:   "table"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "circYdd"
+
+	group "filterux" -- block-group
+	{
+	 block: "DiscreteFilter"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[118]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87448]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialStates"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87449]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Numerator"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87450]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Denominator"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "filterux"
+
+	group "filterux1" -- block-group
+	{
+	 block: "DiscreteFilter"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[122]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87455]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialStates"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87456]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Numerator"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[87457]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Denominator"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "filterux1"
+
+	group "filterux2" -- block-group
+	{
+	 block: "DiscreteFilter"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[4]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialStates"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[5]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Numerator"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[6]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Denominator"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "filterux2"
+
+	group "filterux3" -- block-group
+	{
+	 block: "DiscreteFilter"
+	 desc:  ""
+	 flags: BLOCK|COLLAPSED
+	}
+		p_positionControlSlidingCircle_B_real_T_0[17]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_P_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "InitialStates"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[10]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Numerator"
+		 flags:   PARAM
+		}
+		p_positionControlSlidingCircle_P_real_T_0[11]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2*
+		 alias:   "Denominator"
+		 flags:   PARAM
+		}
+
+
+	endgroup -- block-group "filterux3"
+
+  
+  
+	group " EncoderX" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Pos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[9]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "DeltaPos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "Reset" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "Reset"
+
+		group "Demux" -- block-group
+		{
+		 block: "Demux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[9]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out2"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Demux"
+
+		group "EncoderGain" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[6]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_P_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "EncoderGain"
+
+		group "convert2radians " -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[8]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_P_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "convert2radians "
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+		group "Add" -- block-group
+		{
+		 block: "Sum"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[4]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Add"
+
+  
+  
+		group "DS1103ENC_POS_C2" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlSlidingCircle_B_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[3]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "DS1103ENC_POS_C2"
+  
+  
+		group "DS1103ENC_SET_POS_C2" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "DS1103ENC_SET_POS_C2"
+  
+  
+		group "_DS1103ENC_POS_C1" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlSlidingCircle_B_real_T_0[0]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[1]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "_DS1103ENC_POS_C1"
+  
+  
+		group "_DS1103ENC_SET_POS_C1" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "_DS1103ENC_SET_POS_C1"
+
+
+	endgroup -- subsystem-group " EncoderX"
+  
+  
+	group " EncoderY" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Pos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[13]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "DeltaPos"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "Reset" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "Reset"
+
+		group "Demux" -- block-group
+		{
+		 block: "Demux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[13]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out2"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Demux"
+
+		group "EncoderGain" -- block-group
+		{
+		 block: "Gain"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[12]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_P_real_T_0[2]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Gain"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "EncoderGain"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux"
+
+  
+  
+		group "DS1103ENC_POS_C3" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlSlidingCircle_B_real_T_0[10]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[11]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Enc delta position"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+		endgroup -- subsystem-group "DS1103ENC_POS_C3"
+  
+  
+		group "DS1103ENC_SET_POS_C3" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+		endgroup -- subsystem-group "DS1103ENC_SET_POS_C3"
+
+
+	endgroup -- subsystem-group " EncoderY"
+  
+  
+	group "DS1103ADC_C17" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[124]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C17"
+  
+  
+	group "DS1103ADC_C18" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[126]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C18"
+  
+  
+	group "DS1103ADC_C19" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[128]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "ADC"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+	endgroup -- subsystem-group "DS1103ADC_C19"
+  
+  
+	group "DS1103ENC_SETUP" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "DS1103ENC_SETUP"
+  
+  
+	group "RTI Data" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "RTI Data"
+  
+  
+	group "Subsystem" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[57]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "In2" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In2"
+
+		group "In3" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In3"
+
+		group "In4" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In4"
+
+		group "Matrix\nConcatenate" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate"
+
+		group "Matrix\nConcatenate1" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate1"
+
+		group "Matrix\nConcatenate4" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[57]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate4"
+
+
+
+	endgroup -- subsystem-group "Subsystem"
+  
+  
+	group "Subsystem1" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[65]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "In2" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In2"
+
+		group "In3" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In3"
+
+		group "In4" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In4"
+
+		group "Matrix\nConcatenate" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate"
+
+		group "Matrix\nConcatenate1" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate1"
+
+		group "Matrix\nConcatenate4" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate4"
+
+
+
+	endgroup -- subsystem-group "Subsystem1"
+  
+  
+	group "Subsystem2" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[8]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray1}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[12]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray2}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[15]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray3}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[17]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray4}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[23]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray5}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[27]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray6}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[29]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray7}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[31]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray8}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[33]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray9}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		p_positionControlSlidingCircle_B_real_T_0[35]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray10}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		-- Skipping output Out1{SubArray11}
+		-- Skipping output Out1{SubArray12}
+		-- Skipping output Out1{SubArray13}
+		p_positionControlSlidingCircle_B_real_T_0[36]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "Out1{SubArray14}"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+		-- Skipping output Out1{SubArray15}
+		-- Skipping output Out1{SubArray16}
+		-- Skipping output Out1{SubArray17}
+		-- Skipping output Out1{SubArray18}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "In2" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In2"
+
+		group "In3" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In3"
+
+		group "In4" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[15]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In4"
+
+		group "In5" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[17]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In5"
+
+		group "In6" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In6"
+
+		group "In7" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[31]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In7"
+
+		group "In8" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[33]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In8"
+
+		group "In9" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In9"
+
+		group "In10" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[27]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In10"
+
+		group "In11" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+
+
+		endgroup -- block-group "In11"
+
+		group "cx" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87424]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "cx"
+
+		group "cy" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87425]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "cy"
+
+		group "mx" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87426]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "mx"
+
+		group "my" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87427]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "my"
+
+		group "xc" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87421]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "xc"
+
+		group "yc" -- block-group
+		{
+		 block: "Constant"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1
+			p_positionControlSlidingCircle_P_real_T_0[87422]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Value"
+			 flags:   PARAM
+			}
+
+
+		endgroup -- block-group "yc"
+
+		group "theta" -- block-group
+		{
+		 block: "Fcn"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "theta"
+
+		group "Mux" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[8]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray1}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[12]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray2}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[15]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray3}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[17]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray4}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray5}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[27]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray6}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[29]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray7}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[31]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray8}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[33]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray9}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[35]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray10}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			-- Skipping output Out1{SubArray11}
+			-- Skipping output Out1{SubArray12}
+			-- Skipping output Out1{SubArray13}
+			p_positionControlSlidingCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray14}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			-- Skipping output Out1{SubArray15}
+			-- Skipping output Out1{SubArray16}
+			-- Skipping output Out1{SubArray17}
+			-- Skipping output Out1{SubArray18}
+
+
+		endgroup -- block-group "Mux"
+
+		group "Mux1" -- block-group
+		{
+		 block: "Mux"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			-- Skipping output Out1{SubArray1}
+			-- Skipping output Out1{SubArray2}
+			p_positionControlSlidingCircle_B_real_T_0[23]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray3}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+			p_positionControlSlidingCircle_B_real_T_0[27]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1{SubArray4}"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Mux1"
+
+		group "thetaScope" -- block-group
+		{
+		 block: "Scope"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[36]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "In1"
+			 desc:    ""
+			 flags:   SINK|READONLY
+			}
+
+
+
+		endgroup -- block-group "thetaScope"
+
+
+		-- Skipping label "cx"
+
+		-- Skipping label "cy"
+
+		-- Skipping label "mx"
+
+		-- Skipping label "my"
+
+		-- Skipping label "r0"
+
+		p_positionControlSlidingCircle_B_real_T_0[36]
+		{
+		 type:    flt(64,IEEE)*
+		 alias:   "theta"
+		 desc:    ""
+		 origin:  "positionControlSlidingCircle/Subsystem2/theta/Out1"
+		 flags:   LABEL|READONLY
+		}
+		-- Skipping label "xc"
+
+		-- Skipping label "yc"
+
+
+	endgroup -- subsystem-group "Subsystem2"
+  
+  
+	group "Subsystem3" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[49]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "In2" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In2"
+
+		group "In3" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In3"
+
+		group "In4" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    flt(64,IEEE)*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In4"
+
+		group "Matrix\nConcatenate" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate"
+
+		group "Matrix\nConcatenate1" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate1"
+
+		group "Matrix\nConcatenate4" -- block-group
+		{
+		 block: "Concatenate"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[49]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Matrix\nConcatenate4"
+
+
+
+	endgroup -- subsystem-group "Subsystem3"
+  
+  
+	group "Transpose" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[81]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[79]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "Math\nFunction" -- block-group
+		{
+		 block: "Math"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[81]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Math\nFunction"
+
+
+
+	endgroup -- subsystem-group "Transpose"
+  
+  
+	group "Transpose1" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[111]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_1_Col*
+		 alias:   "Out1"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "In1" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[109]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_1_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "In1"
+
+		group "Math\nFunction" -- block-group
+		{
+		 block: "Math"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[111]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_1_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "Math\nFunction"
+
+
+
+	endgroup -- subsystem-group "Transpose1"
+  
+  
+	group "coeffmatInv1" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+		p_positionControlSlidingCircle_B_real_T_0[101]
+		{
+		 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+		 alias:   "inv(A)"
+		 desc:    ""
+		 flags:   OUTPUT|READONLY
+		}
+
+		group "A" -- block-group
+		{
+		 block: "Inport"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[65]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+		endgroup -- block-group "A"
+
+		group "Identity Matrix" -- block-group
+		{
+		 block: "S-Function"
+		 desc:  ""
+		 flags: BLOCK|COLLAPSED
+		}
+			p_positionControlSlidingCircle_B_real_T_0[89]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "Out1"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+
+
+		endgroup -- block-group "Identity Matrix"
+
+  
+  
+		group "LU Solver" -- subsystem-group
+		{
+		 flags: COLLAPSED
+		 desc:  ""
+		}
+
+			p_positionControlSlidingCircle_B_real_T_0[101]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "X"
+			 desc:    ""
+			 flags:   OUTPUT|READONLY
+			}
+
+			group "A" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[65]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "A"
+
+			group "B" -- block-group
+			{
+			 block: "Inport"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[89]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "B"
+
+			group "Backward\nSubstitution" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[101]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Backward\nSubstitution"
+
+			group "Forward\nSubstitution" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[97]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Forward\nSubstitution"
+
+			group "LU Factorization" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[83]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+				p_positionControlSlidingCircle_B_real_T_0[87]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2*
+				 alias:   "Out2"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "LU Factorization"
+
+			group "Permute\nMatrix" -- block-group
+			{
+			 block: "S-Function"
+			 desc:  ""
+			 flags: BLOCK|COLLAPSED
+			}
+				p_positionControlSlidingCircle_B_real_T_0[93]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+
+			endgroup -- block-group "Permute\nMatrix"
+
+  
+  
+			group "Check Signal\nAttributes" -- subsystem-group
+			{
+			 flags: COLLAPSED
+			 desc:  ""
+			}
+
+				p_positionControlSlidingCircle_B_real_T_0[65]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[65]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "Out1"
+					 desc:    ""
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+				group "Check Signal\nAttributes" -- block-group
+				{
+				 block: "S-Function"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[65]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "In1"
+					 desc:    ""
+					 flags:   SINK|READONLY
+					}
+
+
+
+				endgroup -- block-group "Check Signal\nAttributes"
+
+
+
+			endgroup -- subsystem-group "Check Signal\nAttributes"
+  
+  
+			group "Check Signal\nAttributes1" -- subsystem-group
+			{
+			 flags: COLLAPSED
+			 desc:  ""
+			}
+
+				p_positionControlSlidingCircle_B_real_T_0[89]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[89]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "Out1"
+					 desc:    ""
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+				group "Check Signal\nAttributes" -- block-group
+				{
+				 block: "S-Function"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[89]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "In1"
+					 desc:    ""
+					 flags:   SINK|READONLY
+					}
+
+
+
+				endgroup -- block-group "Check Signal\nAttributes"
+
+
+
+			endgroup -- subsystem-group "Check Signal\nAttributes1"
+  
+  
+			group "Check Signal\nAttributes2" -- subsystem-group
+			{
+			 flags: COLLAPSED
+			 desc:  ""
+			}
+
+				p_positionControlSlidingCircle_B_real_T_0[101]
+				{
+				 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+				 alias:   "Out1"
+				 desc:    ""
+				 flags:   OUTPUT|READONLY
+				}
+
+				group "In1" -- block-group
+				{
+				 block: "Inport"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[101]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "Out1"
+					 desc:    ""
+					 flags:   OUTPUT|READONLY
+					}
+
+
+				endgroup -- block-group "In1"
+
+				group "Check Signal\nAttributes" -- block-group
+				{
+				 block: "S-Function"
+				 desc:  ""
+				 flags: BLOCK|COLLAPSED
+				}
+					p_positionControlSlidingCircle_B_real_T_0[101]
+					{
+					 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+					 alias:   "In1"
+					 desc:    ""
+					 flags:   SINK|READONLY
+					}
+
+
+
+				endgroup -- block-group "Check Signal\nAttributes"
+
+
+
+			endgroup -- subsystem-group "Check Signal\nAttributes2"
+
+			p_positionControlSlidingCircle_B_real_T_0[97]
+			{
+			 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
+			 alias:   "y"
+			 desc:    ""
+			 origin:  "positionControlSlidingCircle/coeffmatInv1/LU Solver/Forward\nSubstitution/Out1"
+			 flags:   LABEL|READONLY
+			}
+
+		endgroup -- subsystem-group "LU Solver"
+
+
+	endgroup -- subsystem-group "coeffmatInv1"
+  
+  
+	group "controlX" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "controlX"
+  
+  
+	group "controlY" -- subsystem-group
+	{
+	 flags: COLLAPSED
+	 desc:  ""
+	}
+
+	endgroup -- subsystem-group "controlY"
+
+	p_positionControlSlidingCircle_B_real_T_0[8]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "x"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/ EncoderX/Pos"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[14]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "xd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/differentiated1/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[23]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "xr"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/xposr/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[29]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "xrd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/Product8/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[33]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "xrdd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/Product9/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[12]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "y"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/ EncoderY/Pos"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[16]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "yd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/differentiated/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[27]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "yr"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/yposr/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[31]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "yrd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/Product6/Out1"
+	 flags:   LABEL|READONLY
+	}
+	p_positionControlSlidingCircle_B_real_T_0[35]
+	{
+	 type:    flt(64,IEEE)*
+	 alias:   "yrdd"
+	 desc:    ""
+	 origin:  "positionControlSlidingCircle/Product7/Out1"
+	 flags:   LABEL|READONLY
+	}
+
+
+
+endgroup -- "Model Root"
