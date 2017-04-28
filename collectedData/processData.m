@@ -1,0 +1,11 @@
+xc = -2.854766346618584e+002;
+yc = -1.792504499237361e+002;
+x=am_ro115.Y(1,1).Data(1,1:15001);
+y=am_ro115.Y(1,2).Data(1,1:15001);
+for i=1:length(x)
+    theta(i)=atan2(y(i)-yc,x(i)-xc);
+end
+force =                                                                                                      am_ro115.Y(1,3).Data(1,1:15001);
+d = fdesign.lowpass('Fp,Fst,Ap,Ast',10,40,0.5,40,100);
+Hd = design(d,'equiripple');
+output = filter(Hd,x);

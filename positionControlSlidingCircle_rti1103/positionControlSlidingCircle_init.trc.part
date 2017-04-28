@@ -3,7 +3,7 @@
 --  Trace file: positionControlSlidingCircle.trc
 --
 --  RTI1103 6.5 (10-May-2010)
---  Sun Feb 26 15:05:55 2017
+--  Fri Apr 28 09:40:22 2017
 --
 --  Used options:
 --    TRCGenerateVirtualBlocks      = 1
@@ -28,7 +28,7 @@
 
 _genname     "RTI"
 _genversion  "6.5"
-_gendate     "02/26/2017 15:05:59"
+_gendate     "04/28/2017 09:40:30"
 _description ""
 _author      "RTI1103 6.5 (10-May-2010)"
 _model       "positionControlSlidingCircle.mdl"
@@ -48,13 +48,13 @@ sampling_period[0]
 
 
 -- Type definitions for arrays
-typedef positionControlSlidingCircle_ArrayDT0_2 flt(64,IEEE)[2]
 typedef positionControlSlidingCircle_ArrayDT0_1_2_Col col flt(64,IEEE)[1][2]
 typedef positionControlSlidingCircle_ArrayDT0_2_2_Col col flt(64,IEEE)[2][2]
+typedef positionControlSlidingCircle_ArrayDT0_2 flt(64,IEEE)[2]
 typedef positionControlSlidingCircle_ArrayDT0_2_1_Col col flt(64,IEEE)[2][1]
-typedef positionControlSlidingCircle_ArrayDT0_14567 flt(64,IEEE)[14567]
+typedef positionControlSlidingCircle_ArrayDT0_9854 flt(64,IEEE)[9854]
 typedef positionControlSlidingCircle_ArrayDT0_4 flt(64,IEEE)[4]
-typedef positionControlSlidingCircle_ArrayDT0_14567_Col col flt(64,IEEE)[14567]
+typedef positionControlSlidingCircle_ArrayDT0_9854_Col col flt(64,IEEE)[9854]
 
 
 -- ******** Simulation control variables **************************************

@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.137
+ * Model version              : 1.154
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Sun Feb 26 15:05:55 2017
+ * C source code generated on : Fri Apr 28 09:40:22 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -781,20 +781,6 @@
 
 /* Block signals (auto storage) */
 typedef struct {
-  real_T SFunction1;                   /* '<S19>/S-Function1' */
-  real_T SFunction2;                   /* '<S19>/S-Function2' */
-  real_T SFunction1_c;                 /* '<S17>/S-Function1' */
-  real_T SFunction2_h;                 /* '<S17>/S-Function2' */
-  real_T Add[2];                       /* '<S1>/Add' */
-  real_T EncoderGain[2];               /* '<S1>/EncoderGain' */
-  real_T convert2radians[2];           /* '<S1>/convert2radians ' */
-  real_T SFunction1_c2;                /* '<S21>/S-Function1' */
-  real_T SFunction2_l;                 /* '<S21>/S-Function2' */
-  real_T EncoderGain_o[2];             /* '<S2>/EncoderGain' */
-  real_T xd;                           /* '<Root>/differentiated1' */
-  real_T filterux2;                    /* '<Root>/filterux2' */
-  real_T yd;                           /* '<Root>/differentiated' */
-  real_T filterux3;                    /* '<Root>/filterux3' */
   real_T Product3;                     /* '<Root>/Product3' */
   real_T DiscreteTimeIntegrator;       /* '<Root>/Discrete-Time Integrator' */
   real_T index;                        /* '<Root>/index' */
@@ -805,6 +791,32 @@ typedef struct {
   real_T Product4;                     /* '<Root>/Product4' */
   real_T Product2;                     /* '<Root>/Product2' */
   real_T yr;                           /* '<Root>/yposr' */
+  real_T theta;                        /* '<S10>/theta' */
+  real_T MatrixConcatenate1[2];        /* '<S14>/Matrix Concatenate1' */
+  real_T MatrixConcatenate4[2];        /* '<S14>/Matrix Concatenate4' */
+  real_T coeffmat2X1[4];               /* '<S14>/coeffmat2X1' */
+  real_T xrefForce;                    /* '<S12>/xrefForce' */
+  real_T SFunction1;                   /* '<S21>/S-Function1' */
+  real_T SFunction2;                   /* '<S21>/S-Function2' */
+  real_T SFunction1_c;                 /* '<S19>/S-Function1' */
+  real_T SFunction2_h;                 /* '<S19>/S-Function2' */
+  real_T Add[2];                       /* '<S1>/Add' */
+  real_T EncoderGain[2];               /* '<S1>/EncoderGain' */
+  real_T convert2radians[2];           /* '<S1>/convert2radians ' */
+  real_T yrefForce;                    /* '<S12>/yrefForce' */
+  real_T SFunction1_c2;                /* '<S23>/S-Function1' */
+  real_T SFunction2_l;                 /* '<S23>/S-Function2' */
+  real_T EncoderGain_o[2];             /* '<S2>/EncoderGain' */
+  real_T VectorConcatenate[2];         /* '<S13>/Vector Concatenate' */
+  real_T VectorConcatenate1[2];        /* '<S13>/Vector Concatenate1' */
+  real_T DotProduct;                   /* '<S13>/Dot Product' */
+  real_T VectorConcatenate_h[2];       /* '<S15>/Vector Concatenate' */
+  real_T Kpepsilond1[2];               /* '<Root>/Kp epsilond1' */
+  real_T gainAddX;                     /* '<Root>/gainAddX' */
+  real_T xd;                           /* '<Root>/differentiated1' */
+  real_T filterux2;                    /* '<Root>/filterux2' */
+  real_T yd;                           /* '<Root>/differentiated' */
+  real_T filterux3;                    /* '<Root>/filterux3' */
   real_T circXd1;                      /* '<Root>/circXd1' */
   real_T xrd;                          /* '<Root>/Product8' */
   real_T circYd;                       /* '<Root>/circYd' */
@@ -813,39 +825,41 @@ typedef struct {
   real_T xrdd;                         /* '<Root>/Product9' */
   real_T circYdd;                      /* '<Root>/circYdd' */
   real_T yrdd;                         /* '<Root>/Product7' */
-  real_T theta;                        /* '<S10>/theta' */
-  real_T MatrixConcatenate2[2];        /* '<Root>/Matrix Concatenate2' */
-  real_T MatrixConcatenate3[2];        /* '<Root>/Matrix Concatenate3' */
-  real_T coeffmat2X2[4];               /* '<Root>/coeffmat2X2' */
-  real_T Pseudoinverse[4];             /* '<Root>/Pseudoinverse' */
-  real_T MatrixConcatenate4[4];        /* '<S11>/Matrix Concatenate4' */
+  real_T MatrixConcatenate2[2];        /* '<S16>/Matrix Concatenate2' */
+  real_T MatrixConcatenate3[2];        /* '<S16>/Matrix Concatenate3' */
+  real_T coeffmat2X2[4];               /* '<S16>/coeffmat2X2' */
+  real_T Pseudoinverse[4];             /* '<S16>/Pseudoinverse' */
+  real_T MatrixConcatenate4_e[4];      /* '<S11>/Matrix Concatenate4' */
   real_T MinvKs[4];                    /* '<Root>/-Minv Ks' */
   real_T MatrixConcatenate4_o[4];      /* '<S8>/Matrix Concatenate4' */
-  real_T epsilon2X1[2];                /* '<Root>/epsilon2X1' */
-  real_T Kpepsilon[2];                 /* '<Root>/Kp epsilon' */
+  real_T epsilon2X1[2];                /* '<S16>/epsilon2X1' */
+  real_T Kpepsilon[2];                 /* '<S16>/Kp epsilon' */
   real_T MatrixConcatenate4_b[4];      /* '<S9>/Matrix Concatenate4' */
-  real_T epsilond2X1[2];               /* '<Root>/epsilond2X1' */
-  real_T Kdepsilond[2];                /* '<Root>/Kd epsilond' */
-  real_T Add_h[2];                     /* '<Root>/Add' */
-  real_T MinvKsKpepsilonKdepsilond[2]; /* '<Root>/-Minv Ks (Kp epsilon+Kd epsilond)' */
-  real_T Kpepsilond[2];                /* '<Root>/Kp epsilond' */
-  real_T Add1[2];                      /* '<Root>/Add1' */
-  real_T MathFunction[2];              /* '<S12>/Math Function' */
-  real_T LUFactorization_o1[4];        /* '<S26>/LU Factorization' */
-  real_T LUFactorization_o2[2];        /* '<S26>/LU Factorization' */
-  real_T IdentityMatrix[4];            /* '<S14>/Identity Matrix' */
-  real_T PermuteMatrix[4];             /* '<S26>/Permute Matrix' */
-  real_T y[4];                         /* '<S26>/Forward Substitution' */
-  real_T BackwardSubstitution[4];      /* '<S26>/Backward Substitution' */
-  real_T matrixmult[2];                /* '<Root>/matrix mult' */
-  real_T rem2X1[2];                    /* '<Root>/rem2X1' */
-  real_T Add2[2];                      /* '<Root>/Add2' */
-  real_T MathFunction_l[2];            /* '<S13>/Math Function' */
-  real_T matrixmult1[2];               /* '<Root>/matrix mult1' */
+  real_T epsilond2X1[2];               /* '<S16>/epsilond2X1' */
+  real_T Kdepsilond[2];                /* '<S16>/Kd epsilond' */
+  real_T Add_h[2];                     /* '<S16>/Add' */
+  real_T MinvKsKpepsilonKdepsilond[2]; /* '<S16>/-Minv Ks (Kp epsilon+Kd epsilond)' */
+  real_T Kpepsilond[2];                /* '<S16>/Kp epsilond' */
+  real_T Add1[2];                      /* '<S16>/Add1' */
+  real_T MathFunction[2];              /* '<S28>/Math Function' */
+  real_T LUFactorization_o1[4];        /* '<S31>/LU Factorization' */
+  real_T LUFactorization_o2[2];        /* '<S31>/LU Factorization' */
+  real_T IdentityMatrix[4];            /* '<S30>/Identity Matrix' */
+  real_T PermuteMatrix[4];             /* '<S31>/Permute Matrix' */
+  real_T y[4];                         /* '<S31>/Forward Substitution' */
+  real_T BackwardSubstitution[4];      /* '<S31>/Backward Substitution' */
+  real_T matrixmult[2];                /* '<S16>/matrix mult' */
+  real_T rem2X1[2];                    /* '<S16>/rem2X1' */
+  real_T Add2[2];                      /* '<S16>/Add2' */
+  real_T MathFunction_g[2];            /* '<S29>/Math Function' */
+  real_T matrixmult1[2];               /* '<S16>/matrix mult1' */
+  real_T Add_h2;                       /* '<Root>/Add' */
   real_T Product;                      /* '<Root>/Product' */
   real_T DAGainY;                      /* '<Root>/DA GainY' */
   real_T Saturation;                   /* '<Root>/Saturation' */
   real_T filterux;                     /* '<Root>/filterux' */
+  real_T gainAddY;                     /* '<Root>/gainAddY' */
+  real_T Add1_o;                       /* '<Root>/Add1' */
   real_T Product1;                     /* '<Root>/Product1' */
   real_T DAGainY1;                     /* '<Root>/DA GainY1' */
   real_T Saturation1;                  /* '<Root>/Saturation1' */
@@ -868,25 +882,21 @@ typedef struct {
 
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
+  real_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
   real_T filterux2_DSTATE;             /* '<Root>/filterux2' */
   real_T filterux3_DSTATE;             /* '<Root>/filterux3' */
-  real_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
   real_T filterux_DSTATE;              /* '<Root>/filterux' */
   real_T filterux1_DSTATE;             /* '<Root>/filterux1' */
   real_T filterux2_tmp;                /* '<Root>/filterux2' */
   real_T filterux3_tmp;                /* '<Root>/filterux3' */
-  real_T Pseudoinverse_X[4];           /* '<Root>/Pseudoinverse' */
-  real_T Pseudoinverse_E[2];           /* '<Root>/Pseudoinverse' */
-  real_T Pseudoinverse_WORK[2];        /* '<Root>/Pseudoinverse' */
-  real_T Pseudoinverse_S[2];           /* '<Root>/Pseudoinverse' */
-  real_T Pseudoinverse_U[4];           /* '<Root>/Pseudoinverse' */
-  real_T Pseudoinverse_V[4];           /* '<Root>/Pseudoinverse' */
+  real_T Pseudoinverse_X[4];           /* '<S16>/Pseudoinverse' */
+  real_T Pseudoinverse_E[2];           /* '<S16>/Pseudoinverse' */
+  real_T Pseudoinverse_WORK[2];        /* '<S16>/Pseudoinverse' */
+  real_T Pseudoinverse_S[2];           /* '<S16>/Pseudoinverse' */
+  real_T Pseudoinverse_U[4];           /* '<S16>/Pseudoinverse' */
+  real_T Pseudoinverse_V[4];           /* '<S16>/Pseudoinverse' */
   real_T filterux_tmp;                 /* '<Root>/filterux' */
   real_T filterux1_tmp;                /* '<Root>/filterux1' */
-  struct {
-    void *LoggedData;
-  } Scope_PWORK;                       /* '<Root>/Scope' */
-
   struct {
     void *LoggedData;
   } thetaScope_PWORK;                  /* '<S10>/thetaScope' */
@@ -917,6 +927,54 @@ typedef struct {
 
 /* Parameters (auto storage) */
 struct Parameters_positionControlSlidi_ {
+  real_T DAOnOff_Value;                /* Expression: 0
+                                        * Referenced by: '<Root>/DA On-Off'
+                                        */
+  real_T xc_Value;                     /* Expression: xc
+                                        * Referenced by: '<S10>/xc'
+                                        */
+  real_T yc_Value;                     /* Expression: yc
+                                        * Referenced by: '<S10>/yc'
+                                        */
+  real_T startX_Value;                 /* Expression: 0
+                                        * Referenced by: '<Root>/startX'
+                                        */
+  real_T input_Value;                  /* Expression: circX(1)
+                                        * Referenced by: '<Root>/input'
+                                        */
+  real_T DiscreteTimeIntegrator_gainval;/* Computed Parameter: DiscreteTimeIntegrator_gainval
+                                         * Referenced by: '<Root>/Discrete-Time Integrator'
+                                         */
+  real_T DiscreteTimeIntegrator_IC;    /* Expression: 0
+                                        * Referenced by: '<Root>/Discrete-Time Integrator'
+                                        */
+  real_T index_Gain;                   /* Expression: 1/Ts
+                                        * Referenced by: '<Root>/index'
+                                        */
+  real_T circX1_table[9854];           /* Expression: circX
+                                        * Referenced by: '<Root>/circX1'
+                                        */
+  real_T circY_table[9854];            /* Expression: circY
+                                        * Referenced by: '<Root>/circY'
+                                        */
+  real_T input2_Value;                 /* Expression: circY(1)
+                                        * Referenced by: '<Root>/input2'
+                                        */
+  real_T zero_Value;                   /* Expression: 0
+                                        * Referenced by: '<S15>/zero'
+                                        */
+  real_T knorm_Value;                  /* Expression: kNorm
+                                        * Referenced by: '<Root>/knorm'
+                                        */
+  real_T rNormal_Value;                /* Expression: rNormal
+                                        * Referenced by: '<Root>/rNormal'
+                                        */
+  real_T xc_Value_d;                   /* Expression: xc
+                                        * Referenced by: '<Root>/xc'
+                                        */
+  real_T yc_Value_h;                   /* Expression: yc
+                                        * Referenced by: '<Root>/yc'
+                                        */
   real_T EncoderGain_Gain;             /* Expression: 4/5614
                                         * Referenced by: '<S1>/EncoderGain'
                                         */
@@ -925,6 +983,9 @@ struct Parameters_positionControlSlidi_ {
                                         */
   real_T EncoderGain_Gain_f;           /* Expression: 4/5614
                                         * Referenced by: '<S2>/EncoderGain'
+                                        */
+  real_T gainAddX_Gain;                /* Expression: 1
+                                        * Referenced by: '<Root>/gainAddX'
                                         */
   real_T differentiated1_Gain;         /* Expression: 1/Ts
                                         * Referenced by: '<Root>/differentiated1'
@@ -950,47 +1011,17 @@ struct Parameters_positionControlSlidi_ {
   real_T filterux3_Denominator[2];     /* Expression: [1 -bLP]
                                         * Referenced by: '<Root>/filterux3'
                                         */
-  real_T startX_Value;                 /* Expression: 0
-                                        * Referenced by: '<Root>/startX'
-                                        */
-  real_T input_Value;                  /* Expression: circX(1)
-                                        * Referenced by: '<Root>/input'
-                                        */
-  real_T DiscreteTimeIntegrator_gainval;/* Computed Parameter: DiscreteTimeIntegrator_gainval
-                                         * Referenced by: '<Root>/Discrete-Time Integrator'
-                                         */
-  real_T DiscreteTimeIntegrator_IC;    /* Expression: 0
-                                        * Referenced by: '<Root>/Discrete-Time Integrator'
-                                        */
-  real_T index_Gain;                   /* Expression: 1/Ts
-                                        * Referenced by: '<Root>/index'
-                                        */
-  real_T circX1_table[14567];          /* Expression: circX
-                                        * Referenced by: '<Root>/circX1'
-                                        */
-  real_T circY_table[14567];           /* Expression: circY
-                                        * Referenced by: '<Root>/circY'
-                                        */
-  real_T input2_Value;                 /* Expression: circY(1)
-                                        * Referenced by: '<Root>/input2'
-                                        */
-  real_T circXd1_table[14567];         /* Expression: circXd
+  real_T circXd1_table[9854];          /* Expression: circXd
                                         * Referenced by: '<Root>/circXd1'
                                         */
-  real_T circYd_table[14567];          /* Expression: circYd
+  real_T circYd_table[9854];           /* Expression: circYd
                                         * Referenced by: '<Root>/circYd'
                                         */
-  real_T circXdd1_table[14567];        /* Expression: circXdd
+  real_T circXdd1_table[9854];         /* Expression: circXdd
                                         * Referenced by: '<Root>/circXdd1'
                                         */
-  real_T circYdd_table[14567];         /* Expression: circYdd
+  real_T circYdd_table[9854];          /* Expression: circYdd
                                         * Referenced by: '<Root>/circYdd'
-                                        */
-  real_T xc_Value;                     /* Expression: xc
-                                        * Referenced by: '<S10>/xc'
-                                        */
-  real_T yc_Value;                     /* Expression: yc
-                                        * Referenced by: '<S10>/yc'
                                         */
   real_T r0_Value;                     /* Expression: r0
                                         * Referenced by: '<Root>/r0'
@@ -1046,9 +1077,6 @@ struct Parameters_positionControlSlidi_ {
   real_T Kd24_Value;                   /* Expression: Kd(2,2)
                                         * Referenced by: '<Root>/Kd2,4'
                                         */
-  real_T DAOnOff_Value;                /* Expression: 0
-                                        * Referenced by: '<Root>/DA On-Off'
-                                        */
   real_T DAGainY_Gain;                 /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY'
                                         */
@@ -1066,6 +1094,9 @@ struct Parameters_positionControlSlidi_ {
                                         */
   real_T filterux_Denominator[2];      /* Expression: [1 -bLP]
                                         * Referenced by: '<Root>/filterux'
+                                        */
+  real_T gainAddY_Gain;                /* Expression: 1
+                                        * Referenced by: '<Root>/gainAddY'
                                         */
   real_T DAGainY1_Gain;                /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY1'
@@ -1267,23 +1298,28 @@ extern struct RT_MODEL_positionControlSliding *positionControlSlidingCircle_M;
  * '<S9>'   : positionControlSlidingCircle/Subsystem1
  * '<S10>'  : positionControlSlidingCircle/Subsystem2
  * '<S11>'  : positionControlSlidingCircle/Subsystem3
- * '<S12>'  : positionControlSlidingCircle/Transpose
- * '<S13>'  : positionControlSlidingCircle/Transpose1
- * '<S14>'  : positionControlSlidingCircle/coeffmatInv1
- * '<S15>'  : positionControlSlidingCircle/controlX
- * '<S16>'  : positionControlSlidingCircle/controlY
- * '<S17>'  : positionControlSlidingCircle/ EncoderX/DS1103ENC_POS_C2
- * '<S18>'  : positionControlSlidingCircle/ EncoderX/DS1103ENC_SET_POS_C2
- * '<S19>'  : positionControlSlidingCircle/ EncoderX/_DS1103ENC_POS_C1
- * '<S20>'  : positionControlSlidingCircle/ EncoderX/_DS1103ENC_SET_POS_C1
- * '<S21>'  : positionControlSlidingCircle/ EncoderY/DS1103ENC_POS_C3
- * '<S22>'  : positionControlSlidingCircle/ EncoderY/DS1103ENC_SET_POS_C3
- * '<S23>'  : positionControlSlidingCircle/RTI Data/RTI Data Store
- * '<S24>'  : positionControlSlidingCircle/RTI Data/RTI Data Store/RTI Data Store
- * '<S25>'  : positionControlSlidingCircle/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store
- * '<S26>'  : positionControlSlidingCircle/coeffmatInv1/LU Solver
- * '<S27>'  : positionControlSlidingCircle/coeffmatInv1/LU Solver/Check Signal Attributes
- * '<S28>'  : positionControlSlidingCircle/coeffmatInv1/LU Solver/Check Signal Attributes1
- * '<S29>'  : positionControlSlidingCircle/coeffmatInv1/LU Solver/Check Signal Attributes2
+ * '<S12>'  : positionControlSlidingCircle/Subsystem4
+ * '<S13>'  : positionControlSlidingCircle/Subsystem5
+ * '<S14>'  : positionControlSlidingCircle/Subsystem6
+ * '<S15>'  : positionControlSlidingCircle/Subsystem7
+ * '<S16>'  : positionControlSlidingCircle/Subsystem8
+ * '<S17>'  : positionControlSlidingCircle/controlX
+ * '<S18>'  : positionControlSlidingCircle/controlY
+ * '<S19>'  : positionControlSlidingCircle/ EncoderX/DS1103ENC_POS_C2
+ * '<S20>'  : positionControlSlidingCircle/ EncoderX/DS1103ENC_SET_POS_C2
+ * '<S21>'  : positionControlSlidingCircle/ EncoderX/_DS1103ENC_POS_C1
+ * '<S22>'  : positionControlSlidingCircle/ EncoderX/_DS1103ENC_SET_POS_C1
+ * '<S23>'  : positionControlSlidingCircle/ EncoderY/DS1103ENC_POS_C3
+ * '<S24>'  : positionControlSlidingCircle/ EncoderY/DS1103ENC_SET_POS_C3
+ * '<S25>'  : positionControlSlidingCircle/RTI Data/RTI Data Store
+ * '<S26>'  : positionControlSlidingCircle/RTI Data/RTI Data Store/RTI Data Store
+ * '<S27>'  : positionControlSlidingCircle/RTI Data/RTI Data Store/RTI Data Store/RTI Data Store
+ * '<S28>'  : positionControlSlidingCircle/Subsystem8/Transpose
+ * '<S29>'  : positionControlSlidingCircle/Subsystem8/Transpose1
+ * '<S30>'  : positionControlSlidingCircle/Subsystem8/coeffmatInv1
+ * '<S31>'  : positionControlSlidingCircle/Subsystem8/coeffmatInv1/LU Solver
+ * '<S32>'  : positionControlSlidingCircle/Subsystem8/coeffmatInv1/LU Solver/Check Signal Attributes
+ * '<S33>'  : positionControlSlidingCircle/Subsystem8/coeffmatInv1/LU Solver/Check Signal Attributes1
+ * '<S34>'  : positionControlSlidingCircle/Subsystem8/coeffmatInv1/LU Solver/Check Signal Attributes2
  */
 #endif                                 /* RTW_HEADER_positionControlSlidingCircle_h_ */
