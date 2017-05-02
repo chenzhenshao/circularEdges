@@ -1,10 +1,10 @@
 %% For X (platform+kistler+cable)
-mx = 9.308173736838939e-004;
-cx = 0.001654915051622;
+mx = 9.241410334340282e-004;
+cx = 0.001651705312519;
 
 %% For Y (platform+kistler+cable)
-cy = 0.001043902893075;
-my = 5.626343735815107e-004;
+cy = 0.001046707328795;
+my = 5.572114462326005e-004;
 % 
 % %% Al platform only
 % mx = 7.950913801404835e-004;
@@ -13,8 +13,8 @@ my = 5.626343735815107e-004;
 % cy=0.001005491797519;
 
 %% Circle
-x=[-162.583; -261.037; -382.245; -374.864; -245.391; -182.292];
-y=[-180.031; -67.382; -132.327; -244.971; -292.570; -245.912];
+x=[-119.663; -197.352; -276.979; -323.515];
+y=[-277.930; -315.409; -291.850; -199.107];
 plot(x,y,'o'), title(' measured points');
 [xc,yc,Re,a] = circfit(x,y);
 th = linspace(0,2*pi,20)';
@@ -43,7 +43,7 @@ circXd=circXd(1:floor(length(circX)/factor));
 circYd=circYd(1:floor(length(circY)/factor));
 circXdd=circXdd(1:floor(length(circX)/factor));
 circYdd=circYdd(1:floor(length(circY)/factor));
-theta=atan2(circY-yc,circX-xc);
+theta=atan2(circY,circX);
 figure(2);
 plot(theta);
 

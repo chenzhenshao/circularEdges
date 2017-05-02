@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.154
+ * Model version              : 1.169
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Fri Apr 28 09:40:22 2017
+ * C source code generated on : Mon May 01 10:54:31 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -302,9 +302,12 @@ static void positionControlSlidingCircle_output(int_T tid)
     positionControlSlidingCircle_B.circX1 *
     positionControlSlidingCircle_P.startX_Value;
 
-  /* Sum: '<Root>/xposr' */
-  positionControlSlidingCircle_B.xr = positionControlSlidingCircle_B.Product3 +
-    positionControlSlidingCircle_B.Product5;
+  /* Sum: '<Root>/xposr' incorporates:
+   *  Constant: '<Root>/xc'
+   */
+  positionControlSlidingCircle_B.xr = (positionControlSlidingCircle_B.Product3 +
+    positionControlSlidingCircle_B.Product5) +
+    positionControlSlidingCircle_P.xc_Value;
 
   /* LookupNDDirect: '<Root>/circY'
    *
@@ -343,13 +346,16 @@ static void positionControlSlidingCircle_output(int_T tid)
     positionControlSlidingCircle_P.input2_Value * (real_T)
     positionControlSlidingCircle_B.LogicalOperator;
 
-  /* Sum: '<Root>/yposr' */
-  positionControlSlidingCircle_B.yr = positionControlSlidingCircle_B.Product4 +
+  /* Sum: '<Root>/yposr' incorporates:
+   *  Constant: '<Root>/yc'
+   */
+  positionControlSlidingCircle_B.yr = (positionControlSlidingCircle_P.yc_Value +
+    positionControlSlidingCircle_B.Product4) +
     positionControlSlidingCircle_B.Product2;
 
   /* Fcn: '<S10>/theta' incorporates:
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    */
   positionControlSlidingCircle_B.theta = rt_atan2_snf
     ((-positionControlSlidingCircle_P.yc_Value) +
@@ -395,7 +401,7 @@ static void positionControlSlidingCircle_output(int_T tid)
   positionControlSlidingCircle_B.xrefForce =
     positionControlSlidingCircle_P.rNormal_Value * cos
     (positionControlSlidingCircle_B.theta) +
-    positionControlSlidingCircle_P.xc_Value_d;
+    positionControlSlidingCircle_P.xc_Value;
 
   /* S-Function (rti_commonblock): '<S21>/S-Function1' */
   /* This comment workarounds a Real-Time Workshop code generation problem */
@@ -450,7 +456,7 @@ static void positionControlSlidingCircle_output(int_T tid)
   positionControlSlidingCircle_B.yrefForce =
     positionControlSlidingCircle_P.rNormal_Value * sin
     (positionControlSlidingCircle_B.theta) +
-    positionControlSlidingCircle_P.yc_Value_h;
+    positionControlSlidingCircle_P.yc_Value;
 
   /* S-Function (rti_commonblock): '<S23>/S-Function1' */
   /* This comment workarounds a Real-Time Workshop code generation problem */
@@ -517,6 +523,16 @@ static void positionControlSlidingCircle_output(int_T tid)
   positionControlSlidingCircle_B.gainAddX =
     positionControlSlidingCircle_P.gainAddX_Gain *
     positionControlSlidingCircle_B.Kpepsilond1[0];
+
+  /* DiscreteFilter: '<Root>/filterux4' */
+  denAccum = positionControlSlidingCircle_B.gainAddX;
+  denAccum -= positionControlSlidingCircle_P.filterux4_Denominator[1] *
+    positionControlSlidingCir_DWork.filterux4_DSTATE;
+  denAccum /= positionControlSlidingCircle_P.filterux4_Denominator[0];
+  positionControlSlidingCir_DWork.filterux4_tmp = denAccum;
+  denAccum = positionControlSlidingCircle_P.filterux4_Numerator *
+    positionControlSlidingCir_DWork.filterux4_tmp;
+  positionControlSlidingCircle_B.filterux4 = denAccum;
 
   /* Gain: '<Root>/differentiated1' */
   positionControlSlidingCircle_B.xd =
@@ -644,12 +660,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/coeffmat(1,1)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.mx_Value;
   tmp = rt_pow_snf(denAccum, -1.0);
@@ -683,12 +699,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/coeffmat(1,2)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.my_Value;
   tmp = rt_pow_snf(denAccum, -1.0);
@@ -722,12 +738,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/coeffmat(2,1)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.mx_Value;
   tmp = rt_pow_snf(denAccum, -1.0);
@@ -750,12 +766,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/coeffmat(2,2)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.my_Value;
   tmp = rt_pow_snf(denAccum, -1.0);
@@ -871,12 +887,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/epsilon(1)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = (-positionControlSlidingCircle_P.xc_Value) +
     positionControlSlidingCircle_B.convert2radians[0];
@@ -903,12 +919,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/epsilon(2)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = (-positionControlSlidingCircle_P.xc_Value) +
     positionControlSlidingCircle_B.convert2radians[0];
@@ -964,12 +980,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/epsilond(1)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = (-positionControlSlidingCircle_P.xc_Value) +
     positionControlSlidingCircle_B.convert2radians[0];
@@ -1070,12 +1086,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/epsilond(2)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = (-positionControlSlidingCircle_P.xc_Value) +
     positionControlSlidingCircle_B.convert2radians[0];
@@ -1380,12 +1396,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/rem(1)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.mx_Value;
   tmp_5 = rt_pow_snf(denAccum, -1.0);
@@ -1805,12 +1821,12 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* Fcn: '<Root>/rem(2)' incorporates:
    *  Constant: '<Root>/r0'
+   *  Constant: '<Root>/xc'
+   *  Constant: '<Root>/yc'
    *  Constant: '<S10>/cx'
    *  Constant: '<S10>/cy'
    *  Constant: '<S10>/mx'
    *  Constant: '<S10>/my'
-   *  Constant: '<S10>/xc'
-   *  Constant: '<S10>/yc'
    */
   denAccum = positionControlSlidingCircle_P.mx_Value;
   tmp_1q = rt_pow_snf(denAccum, -1.0);
@@ -1905,22 +1921,27 @@ static void positionControlSlidingCircle_output(int_T tid)
     positionControlSlidingCircle_B.MathFunction_g[1] +
     positionControlSlidingCircle_B.matrixmult1[1];
 
-  /* Sum: '<Root>/Add' */
-  positionControlSlidingCircle_B.Add_h2 =
-    positionControlSlidingCircle_B.gainAddX +
+  /* Gain: '<Root>/uxorig' */
+  positionControlSlidingCircle_B.uxorig =
+    positionControlSlidingCircle_P.uxorig_Gain *
     positionControlSlidingCircle_B.matrixmult1[0];
 
-  /* Product: '<Root>/Product' incorporates:
+  /* Sum: '<Root>/Add' */
+  positionControlSlidingCircle_B.Add_h2 =
+    positionControlSlidingCircle_B.filterux4 +
+    positionControlSlidingCircle_B.uxorig;
+
+  /* Product: '<Root>/uxact' incorporates:
    *  Constant: '<Root>/DA On-Off'
    */
-  positionControlSlidingCircle_B.Product =
+  positionControlSlidingCircle_B.uxact =
     positionControlSlidingCircle_P.DAOnOff_Value *
     positionControlSlidingCircle_B.Add_h2;
 
   /* Gain: '<Root>/DA GainY' */
   positionControlSlidingCircle_B.DAGainY =
     positionControlSlidingCircle_P.DAGainY_Gain *
-    positionControlSlidingCircle_B.Product;
+    positionControlSlidingCircle_B.uxact;
 
   /* Saturate: '<Root>/Saturation' */
   denAccum = positionControlSlidingCircle_B.DAGainY;
@@ -1944,27 +1965,26 @@ static void positionControlSlidingCircle_output(int_T tid)
   /* dSPACE I/O Board DS1103 #1 Unit:DAC */
   ds1103_dac_write(1, positionControlSlidingCircle_B.filterux);
 
-  /* Gain: '<Root>/gainAddY' */
-  positionControlSlidingCircle_B.gainAddY =
-    positionControlSlidingCircle_P.gainAddY_Gain *
-    positionControlSlidingCircle_B.Kpepsilond1[1];
-
-  /* Sum: '<Root>/Add1' */
-  positionControlSlidingCircle_B.Add1_o =
-    positionControlSlidingCircle_B.gainAddY +
+  /* Gain: '<Root>/uyorig' */
+  positionControlSlidingCircle_B.uyorig =
+    positionControlSlidingCircle_P.uyorig_Gain *
     positionControlSlidingCircle_B.matrixmult1[1];
 
-  /* Product: '<Root>/Product1' incorporates:
+  /* Sum: '<Root>/Add1' */
+  positionControlSlidingCircle_B.Add1_o = 0.0 +
+    positionControlSlidingCircle_B.uyorig;
+
+  /* Product: '<Root>/uyact' incorporates:
    *  Constant: '<Root>/DA On-Off'
    */
-  positionControlSlidingCircle_B.Product1 =
+  positionControlSlidingCircle_B.uyact =
     positionControlSlidingCircle_P.DAOnOff_Value *
     positionControlSlidingCircle_B.Add1_o;
 
   /* Gain: '<Root>/DA GainY1' */
   positionControlSlidingCircle_B.DAGainY1 =
     positionControlSlidingCircle_P.DAGainY1_Gain *
-    positionControlSlidingCircle_B.Product1;
+    positionControlSlidingCircle_B.uyact;
 
   /* Saturate: '<Root>/Saturation1' */
   denAccum = positionControlSlidingCircle_B.DAGainY1;
@@ -2036,10 +2056,63 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   /* end of Outputs for SubSystem: '<S2>/DS1103ENC_SET_POS_C3' */
 
+  /* Gain: '<Root>/gainAddY' */
+  positionControlSlidingCircle_B.gainAddY =
+    positionControlSlidingCircle_P.gainAddY_Gain *
+    positionControlSlidingCircle_B.Kpepsilond1[1];
+
+  /* DiscreteFilter: '<Root>/filterux5' */
+  denAccum = positionControlSlidingCircle_B.gainAddY;
+  denAccum -= positionControlSlidingCircle_P.filterux5_Denominator[1] *
+    positionControlSlidingCir_DWork.filterux5_DSTATE;
+  denAccum /= positionControlSlidingCircle_P.filterux5_Denominator[0];
+  positionControlSlidingCir_DWork.filterux5_tmp = denAccum;
+  denAccum = positionControlSlidingCircle_P.filterux5_Numerator *
+    positionControlSlidingCir_DWork.filterux5_tmp;
+  positionControlSlidingCircle_B.filterux5 = denAccum;
+
+  /* Fcn: '<Root>/Fcn' */
+  denAccum = positionControlSlidingCircle_B.filterux4;
+  tmp_0 = rt_pow_snf(denAccum, 2.0);
+  denAccum = positionControlSlidingCircle_B.filterux5;
+  denAccum = rt_pow_snf(denAccum, 2.0);
+  denAccum += tmp_0;
+  if (denAccum < 0.0) {
+    denAccum = -sqrt(-denAccum);
+  } else {
+    denAccum = sqrt(denAccum);
+  }
+
+  positionControlSlidingCircle_B.Fcn = denAccum;
+
+  /* Fcn: '<Root>/Fcn1' */
+  denAccum = positionControlSlidingCircle_B.uxorig;
+  tmp_0 = rt_pow_snf(denAccum, 2.0);
+  denAccum = positionControlSlidingCircle_B.uyorig;
+  denAccum = rt_pow_snf(denAccum, 2.0);
+  denAccum += tmp_0;
+  if (denAccum < 0.0) {
+    denAccum = -sqrt(-denAccum);
+  } else {
+    denAccum = sqrt(denAccum);
+  }
+
+  positionControlSlidingCircle_B.Fcn1 = denAccum;
+
   /* Gain: '<Root>/currentNegated' */
   positionControlSlidingCircle_B.currentNegated =
     positionControlSlidingCircle_P.currentNegated_Gain *
-    positionControlSlidingCircle_B.Product;
+    positionControlSlidingCircle_B.uxact;
+
+  /* Gain: '<Root>/utotal' */
+  positionControlSlidingCircle_B.utotal =
+    positionControlSlidingCircle_P.utotal_Gain *
+    positionControlSlidingCircle_B.Fcn;
+
+  /* Gain: '<Root>/utotalorig' */
+  positionControlSlidingCircle_B.utotalorig =
+    positionControlSlidingCircle_P.utotalorig_Gain *
+    positionControlSlidingCircle_B.Fcn1;
 
   /* S-Function (rti_commonblock): '<S3>/S-Function' */
   /* This comment workarounds a Real-Time Workshop code generation problem */
@@ -2155,6 +2228,10 @@ static void positionControlSlidingCircle_update(int_T tid)
     positionControlSlidingCir_DWork.DiscreteTimeIntegrator_PrevRese = 2;
   }
 
+  /* Update for DiscreteFilter: '<Root>/filterux4' */
+  positionControlSlidingCir_DWork.filterux4_DSTATE =
+    positionControlSlidingCir_DWork.filterux4_tmp;
+
   /* Update for DiscreteFilter: '<Root>/filterux2' */
   positionControlSlidingCir_DWork.filterux2_DSTATE =
     positionControlSlidingCir_DWork.filterux2_tmp;
@@ -2170,6 +2247,10 @@ static void positionControlSlidingCircle_update(int_T tid)
   /* Update for DiscreteFilter: '<Root>/filterux1' */
   positionControlSlidingCir_DWork.filterux1_DSTATE =
     positionControlSlidingCir_DWork.filterux1_tmp;
+
+  /* Update for DiscreteFilter: '<Root>/filterux5' */
+  positionControlSlidingCir_DWork.filterux5_DSTATE =
+    positionControlSlidingCir_DWork.filterux5_tmp;
 
   /* Update absolute time for base rate */
   /* The "clockTick0" counts the number of times the code of this task has
@@ -2305,9 +2386,9 @@ void MdlInitializeSizes(void)
   positionControlSlidingCircle_M->Sizes.numU = (0);/* Number of model inputs */
   positionControlSlidingCircle_M->Sizes.sysDirFeedThru = (0);/* The model is not direct feedthrough */
   positionControlSlidingCircle_M->Sizes.numSampTimes = (1);/* Number of sample times */
-  positionControlSlidingCircle_M->Sizes.numBlocks = (170);/* Number of blocks */
-  positionControlSlidingCircle_M->Sizes.numBlockIO = (97);/* Number of block outputs */
-  positionControlSlidingCircle_M->Sizes.numBlockPrms = (59197);/* Sum of parameter "widths" */
+  positionControlSlidingCircle_M->Sizes.numBlocks = (176);/* Number of blocks */
+  positionControlSlidingCircle_M->Sizes.numBlockIO = (105);/* Number of block outputs */
+  positionControlSlidingCircle_M->Sizes.numBlockPrms = (59207);/* Sum of parameter "widths" */
 }
 
 void MdlInitializeSampleTimes(void)
@@ -2320,6 +2401,10 @@ void MdlInitialize(void)
   positionControlSlidingCir_DWork.DiscreteTimeIntegrator_DSTATE =
     positionControlSlidingCircle_P.DiscreteTimeIntegrator_IC;
   positionControlSlidingCir_DWork.DiscreteTimeIntegrator_PrevRese = 2;
+
+  /* InitializeConditions for DiscreteFilter: '<Root>/filterux4' */
+  positionControlSlidingCir_DWork.filterux4_DSTATE =
+    positionControlSlidingCircle_P.filterux4_InitialStates;
 
   /* InitializeConditions for DiscreteFilter: '<Root>/filterux2' */
   positionControlSlidingCir_DWork.filterux2_DSTATE =
@@ -2336,6 +2421,10 @@ void MdlInitialize(void)
   /* InitializeConditions for DiscreteFilter: '<Root>/filterux1' */
   positionControlSlidingCir_DWork.filterux1_DSTATE =
     positionControlSlidingCircle_P.filterux1_InitialStates;
+
+  /* InitializeConditions for DiscreteFilter: '<Root>/filterux5' */
+  positionControlSlidingCir_DWork.filterux5_DSTATE =
+    positionControlSlidingCircle_P.filterux5_InitialStates;
 }
 
 void MdlStart(void)

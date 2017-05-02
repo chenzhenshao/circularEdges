@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.154"
+    ComputedModelVersion    "1.169"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "daq"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Thu Apr 27 20:54:16 2017"
-  RTWModifiedTimeStamp	  415227103
-  ModelVersionFormat	  "1.%<AutoIncrement:154>"
+  LastModifiedDate	  "Sun Apr 30 18:05:18 2017"
+  RTWModifiedTimeStamp	  415476316
+  ModelVersionFormat	  "1.%<AutoIncrement:169>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    1379
+    SIDHighWatermark	    1467
     Block {
       BlockType		      SubSystem
       Name		      " EncoderX"
@@ -2000,6 +2000,20 @@ Model {
       OutScaling	      "2^0"
     }
     Block {
+      BlockType		      Fcn
+      Name		      "Fcn"
+      SID		      1395
+      Position		      [2400, 185, 2460, 215]
+      Expr		      "sqrt(u(1)^2+u(2)^2)"
+    }
+    Block {
+      BlockType		      Fcn
+      Name		      "Fcn1"
+      SID		      1434
+      Position		      [2395, 870, 2455, 900]
+      Expr		      "sqrt(u(1)^2+u(2)^2)"
+    }
+    Block {
       BlockType		      Terminator
       Name		      "Fmag"
       SID		      1156
@@ -2245,30 +2259,24 @@ Model {
       DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Product
-      Name		      "Product"
-      SID		      15
+      BlockType		      Mux
+      Name		      "Mux1"
+      SID		      1396
       Ports		      [2, 1]
-      Position		      [2680, 542, 2710, 573]
-      InputSameDT	      off
-      OutDataTypeMode	      "Inherit via internal rule"
-      OutDataType	      "fixdt(1, 16)"
-      OutScaling	      "2^0"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
+      Position		      [2330, 181, 2335, 219]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
     }
     Block {
-      BlockType		      Product
-      Name		      "Product1"
-      SID		      511
+      BlockType		      Mux
+      Name		      "Mux2"
+      SID		      1435
       Ports		      [2, 1]
-      Position		      [2800, 667, 2830, 698]
-      InputSameDT	      off
-      OutDataTypeMode	      "Inherit via internal rule"
-      OutDataType	      "fixdt(1, 16)"
-      OutScaling	      "2^0"
-      OutDataTypeStr	      "Inherit: Inherit via internal rule"
-      SaturateOnIntegerOverflow	off
+      Position		      [2340, 866, 2345, 904]
+      ShowName		      off
+      Inputs		      "2"
+      DisplayOption	      "bar"
     }
     Block {
       BlockType		      Product
@@ -2462,10 +2470,10 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "RTI Data Store"
-	  SID			  1376
+	  SID			  1464
 	  Tag			  "struct('private',struct('version',struct('dsVer',uint32(2),'dsVerCreation',uint32(2),'RTI',struct('ver','6"
-	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['27"
-	  "-Apr-2017 20:54:16'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
+	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['30"
+	  "-Apr-2017 18:05:18'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
 	  "lSlidingCircle'}},'data',{{struct('TH',struct('thTaskInfo',struct('taskType',{'TIMER','HWINT','TMRINT','SWINT'},'ta"
 	  "sksNumOf',{1,0,0,0},'srcIds',{{'TIMERA'},{},{},{}},'taskNames',{{['Timer Task 1']},{},{},{}})),'th_tc',struct('data"
 	  "Type','TASK','taskGroupId','','taskGroupList',{{}},'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcI"
@@ -2515,7 +2523,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "RTI Data Store"
-	      SID		      1377
+	      SID		      1465
 	      Ports		      []
 	      Position		      [146, 15, 181, 28]
 	      ForegroundColor	      "white"
@@ -2556,7 +2564,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "RTI Data Store"
-		  SID			  1378
+		  SID			  1466
 		  Ports			  []
 		  Position		  [146, 15, 181, 28]
 		  ForegroundColor	  "white"
@@ -2597,7 +2605,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "RTI Data Store"
-		    SID			    1379
+		    SID			    1467
 		    Ports		    []
 		    Position		    [146, 15, 181, 28]
 		    ForegroundColor	    "white"
@@ -2651,8 +2659,8 @@ Model {
       SID		      1087
       Ports		      [1, 1]
       Position		      [2835, 545, 2865, 575]
-      UpperLimit	      "2"
-      LowerLimit	      "-2"
+      UpperLimit	      "5"
+      LowerLimit	      "-5"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
     }
@@ -2663,8 +2671,8 @@ Model {
       Ports		      [1, 1]
       Position		      [2950, 670, 2980, 700]
       NamePlacement	      "alternate"
-      UpperLimit	      "2"
-      LowerLimit	      "-2"
+      UpperLimit	      "5"
+      LowerLimit	      "-5"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
     }
@@ -2950,7 +2958,7 @@ Model {
       BlockType		      SubSystem
       Name		      "Subsystem2"
       SID		      1138
-      Ports		      [11, 2]
+      Ports		      [13, 2]
       Position		      [850, 409, 1010, 631]
       MinAlgLoopOccurrences   off
       PropExecContextOutsideSubsystem off
@@ -2962,7 +2970,7 @@ Model {
       System {
 	Name			"Subsystem2"
 	Location		[1069, 154, 1614, 988]
-	Open			off
+	Open			on
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -3066,6 +3074,36 @@ Model {
 	  Port {
 	    PortNumber		    1
 	    Name		    "r0"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In12"
+	  SID			  1458
+	  Position		  [155, 420, 170, 450]
+	  NamePlacement		  "alternate"
+	  Port			  "12"
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "xc"
+	    RTWStorageClass	    "Auto"
+	    DataLoggingNameMode	    "SignalName"
+	  }
+	}
+	Block {
+	  BlockType		  Inport
+	  Name			  "In13"
+	  SID			  1459
+	  Position		  [155, 465, 170, 495]
+	  NamePlacement		  "alternate"
+	  Port			  "13"
+	  IconDisplay		  "Port number"
+	  Port {
+	    PortNumber		    1
+	    Name		    "yc"
 	    RTWStorageClass	    "Auto"
 	    DataLoggingNameMode	    "SignalName"
 	  }
@@ -3183,36 +3221,6 @@ Model {
 	  SampleTime		  "0"
 	}
 	Block {
-	  BlockType		  Constant
-	  Name			  "xc"
-	  SID			  1125
-	  Position		  [150, 415, 180, 445]
-	  Value			  "xc"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^0"
-	  Port {
-	    PortNumber		    1
-	    Name		    "xc"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
-	  BlockType		  Constant
-	  Name			  "yc"
-	  SID			  1126
-	  Position		  [150, 460, 180, 490]
-	  Value			  "yc"
-	  OutDataType		  "fixdt(1, 16)"
-	  OutScaling		  "2^0"
-	  Port {
-	    PortNumber		    1
-	    Name		    "yc"
-	    RTWStorageClass	    "Auto"
-	    DataLoggingNameMode	    "SignalName"
-	  }
-	}
-	Block {
 	  BlockType		  Outport
 	  Name			  "Out1"
 	  SID			  1147
@@ -3306,9 +3314,9 @@ Model {
 	Line {
 	  Name			  "yc"
 	  Labels		  [0, 0]
-	  SrcBlock		  "yc"
+	  SrcBlock		  "In13"
 	  SrcPort		  1
-	  Points		  [5, 0]
+	  Points		  [10, 0; 0, -5; 5, 0]
 	  Branch {
 	    Labels		    [3, 0]
 	    Points		    [10, 0; 0, -30]
@@ -3324,9 +3332,9 @@ Model {
 	Line {
 	  Name			  "xc"
 	  Labels		  [0, 0]
-	  SrcBlock		  "xc"
+	  SrcBlock		  "In12"
 	  SrcPort		  1
-	  Points		  [30, 0]
+	  Points		  [10, 0; 0, -5; 30, 0]
 	  Branch {
 	    Labels		    [1, 0]
 	    DstBlock		    "Mux"
@@ -5165,10 +5173,28 @@ Model {
       Denominator	      "[1 -bLP]"
     }
     Block {
+      BlockType		      DiscreteFilter
+      Name		      "filterux4"
+      SID		      1407
+      Ports		      [1, 1]
+      Position		      [2190, 309, 2220, 341]
+      Numerator		      "[1-bLP]"
+      Denominator	      "[1 -bLP]"
+    }
+    Block {
+      BlockType		      DiscreteFilter
+      Name		      "filterux5"
+      SID		      1409
+      Ports		      [1, 1]
+      Position		      [2190, 409, 2220, 441]
+      Numerator		      "[1-bLP]"
+      Denominator	      "[1 -bLP]"
+    }
+    Block {
       BlockType		      Gain
       Name		      "gainAddX"
       SID		      1352
-      Position		      [2145, 310, 2175, 340]
+      Position		      [2125, 310, 2155, 340]
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
       ParameterScaling	      "2^0"
@@ -5183,7 +5209,7 @@ Model {
       BlockType		      Gain
       Name		      "gainAddY"
       SID		      1353
-      Position		      [2140, 410, 2170, 440]
+      Position		      [2125, 410, 2155, 440]
       ParameterDataTypeMode   "Inherit via internal rule"
       ParameterDataType	      "fixdt(1, 16)"
       ParameterScaling	      "2^0"
@@ -5318,10 +5344,108 @@ Model {
       Position		      [2400, 415, 2420, 435]
     }
     Block {
+      BlockType		      Gain
+      Name		      "utotal"
+      SID		      1397
+      Position		      [2485, 185, 2515, 215]
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "utotal2"
+      SID		      1394
+      Position		      [2565, 190, 2585, 210]
+    }
+    Block {
+      BlockType		      Terminator
+      Name		      "utotal3"
+      SID		      1437
+      Position		      [2560, 875, 2580, 895]
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "utotalorig"
+      SID		      1436
+      Position		      [2480, 870, 2510, 900]
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "uxact"
+      SID		      15
+      Ports		      [2, 1]
+      Position		      [2680, 542, 2710, 573]
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "uxorig"
+      SID		      1384
+      Position		      [2265, 640, 2295, 670]
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Product
+      Name		      "uyact"
+      SID		      511
+      Ports		      [2, 1]
+      Position		      [2800, 667, 2830, 698]
+      InputSameDT	      off
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
+      BlockType		      Gain
+      Name		      "uyorig"
+      SID		      1385
+      Position		      [2270, 745, 2300, 775]
+      ParameterDataTypeMode   "Inherit via internal rule"
+      ParameterDataType	      "fixdt(1, 16)"
+      ParameterScaling	      "2^0"
+      ParamDataTypeStr	      "Inherit: Inherit via internal rule"
+      OutDataTypeMode	      "Inherit via internal rule"
+      OutDataType	      "fixdt(1, 16)"
+      OutScaling	      "2^0"
+      OutDataTypeStr	      "Inherit: Inherit via internal rule"
+      SaturateOnIntegerOverflow	off
+    }
+    Block {
       BlockType		      Constant
       Name		      "xc"
       SID		      1230
-      Position		      [855, 235, 885, 265]
+      Position		      [525, 60, 555, 90]
       Value		      "xc"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
@@ -5330,8 +5454,9 @@ Model {
       BlockType		      Sum
       Name		      "xposr"
       SID		      341
-      Ports		      [2, 1]
-      Position		      [605, 150, 635, 185]
+      Ports		      [3, 1]
+      Position		      [605, 152, 635, 188]
+      Inputs		      "+++"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
@@ -5349,7 +5474,7 @@ Model {
       BlockType		      Constant
       Name		      "yc"
       SID		      1231
-      Position		      [855, 280, 885, 310]
+      Position		      [525, 110, 555, 140]
       Value		      "yc"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
@@ -5358,8 +5483,9 @@ Model {
       BlockType		      Sum
       Name		      "yposr"
       SID		      509
-      Ports		      [2, 1]
-      Position		      [610, 890, 640, 925]
+      Ports		      [3, 1]
+      Position		      [610, 892, 640, 928]
+      Inputs		      "+++"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
@@ -5380,7 +5506,7 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Product"
+      SrcBlock		      "uxact"
       SrcPort		      1
       Points		      [15, 0]
       Branch {
@@ -5398,12 +5524,12 @@ Model {
       SrcPort		      1
       Points		      [1090, 0; 0, 35; 1505, 0; 0, 465]
       Branch {
-	DstBlock		"Product"
+	DstBlock		"uxact"
 	DstPort			1
       }
       Branch {
 	Points			[0, 130]
-	DstBlock		"Product1"
+	DstBlock		"uyact"
 	DstPort			1
       }
     }
@@ -5651,7 +5777,7 @@ Model {
       DstPort		      1
     }
     Line {
-      SrcBlock		      "Product1"
+      SrcBlock		      "uyact"
       SrcPort		      1
       DstBlock		      "DA GainY1"
       DstPort		      1
@@ -5661,13 +5787,6 @@ Model {
       SrcPort		      1
       DstBlock		      "Product2"
       DstPort		      1
-    }
-    Line {
-      SrcBlock		      "Product2"
-      SrcPort		      1
-      Points		      [40, 0; 0, -15]
-      DstBlock		      "yposr"
-      DstPort		      2
     }
     Line {
       SrcBlock		      "Logical\nOperator"
@@ -5703,13 +5822,6 @@ Model {
       DstPort		      2
     }
     Line {
-      SrcBlock		      "Product4"
-      SrcPort		      1
-      Points		      [40, 0; 0, 270]
-      DstBlock		      "yposr"
-      DstPort		      1
-    }
-    Line {
       SrcBlock		      "circX1"
       SrcPort		      1
       DstBlock		      "Product5"
@@ -5718,7 +5830,7 @@ Model {
     Line {
       SrcBlock		      "Product5"
       SrcPort		      1
-      Points		      [45, 0; 0, -170]
+      Points		      [45, 0; 0, -175]
       DstBlock		      "xposr"
       DstPort		      2
     }
@@ -5756,6 +5868,7 @@ Model {
       Points		      [195, 0; 0, 15; 45, 0]
       Branch {
 	Labels			[1, 0]
+	Points			[85, 0]
 	DstBlock		"Subsystem2"
 	DstPort			2
       }
@@ -5794,7 +5907,7 @@ Model {
       Labels		      [3, 0]
       SrcBlock		      "Product8"
       SrcPort		      1
-      Points		      [270, 0; 0, 235]
+      Points		      [270, 0; 0, 220]
       DstBlock		      "Subsystem2"
       DstPort		      6
     }
@@ -5803,7 +5916,7 @@ Model {
       Labels		      [3, 0]
       SrcBlock		      "Product9"
       SrcPort		      1
-      Points		      [300, 0; 0, 330]
+      Points		      [300, 0; 0, 305]
       DstBlock		      "Subsystem2"
       DstPort		      8
     }
@@ -5812,7 +5925,7 @@ Model {
       Labels		      [3, 0]
       SrcBlock		      "Product6"
       SrcPort		      1
-      Points		      [260, 0; 0, -165]
+      Points		      [260, 0; 0, -185]
       DstBlock		      "Subsystem2"
       DstPort		      7
     }
@@ -5821,7 +5934,7 @@ Model {
       Labels		      [3, 0]
       SrcBlock		      "Product7"
       SrcPort		      1
-      Points		      [250, 0; 0, -200]
+      Points		      [250, 0; 0, -230]
       DstBlock		      "Subsystem2"
       DstPort		      9
     }
@@ -6036,21 +6149,21 @@ Model {
     Line {
       SrcBlock		      "filterux2"
       SrcPort		      1
-      Points		      [60, 0; 0, 30]
+      Points		      [60, 0; 0, 25]
       DstBlock		      "Subsystem2"
       DstPort		      4
     }
     Line {
       SrcBlock		      "filterux3"
       SrcPort		      1
-      Points		      [230, 0; 0, -575]
+      Points		      [230, 0; 0, -585]
       DstBlock		      "Subsystem2"
       DstPort		      5
     }
     Line {
       SrcBlock		      "r0"
       SrcPort		      1
-      Points		      [10, 0; 0, -20]
+      Points		      [10, 0; 0, -60]
       DstBlock		      "Subsystem2"
       DstPort		      11
     }
@@ -6064,16 +6177,48 @@ Model {
     Line {
       SrcBlock		      "xc"
       SrcPort		      1
-      Points		      [40, 0; 0, -40]
-      DstBlock		      "Subsystem4"
-      DstPort		      2
+      Points		      [20, 0]
+      Branch {
+	Points			[0, 105]
+	DstBlock		"xposr"
+	DstPort			3
+      }
+      Branch {
+	Points			[190, 0]
+	Branch {
+	  Points		  [160, 0; 0, 135]
+	  DstBlock		  "Subsystem4"
+	  DstPort		  2
+	}
+	Branch {
+	  Points		  [0, 520]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  12
+	}
+      }
     }
     Line {
       SrcBlock		      "yc"
       SrcPort		      1
-      Points		      [55, 0; 0, -65]
-      DstBlock		      "Subsystem4"
-      DstPort		      3
+      Points		      [0, 0]
+      Branch {
+	Points			[5, 0; 0, 775]
+	DstBlock		"yposr"
+	DstPort			1
+      }
+      Branch {
+	Points			[125, 0]
+	Branch {
+	  Points		  [260, 0; 0, 105]
+	  DstBlock		  "Subsystem4"
+	  DstPort		  3
+	}
+	Branch {
+	  Points		  [0, 485]
+	  DstBlock		  "Subsystem2"
+	  DstPort		  13
+	}
+      }
     }
     Line {
       SrcBlock		      "Subsystem4"
@@ -6284,57 +6429,155 @@ Model {
     Line {
       SrcBlock		      "gainAddX"
       SrcPort		      1
-      Points		      [105, 0]
-      Branch {
-	DstBlock		"uaddX"
-	DstPort			1
-      }
-      Branch {
-	Points			[0, 315]
-	DstBlock		"Add"
-	DstPort			1
-      }
-    }
-    Line {
-      SrcBlock		      "gainAddY"
-      SrcPort		      1
-      Points		      [25, 0]
-      Branch {
-	DstBlock		"uaddY"
-	DstPort			1
-      }
-      Branch {
-	Points			[140, 0; 0, 320]
-	DstBlock		"Add1"
-	DstPort			1
-      }
+      DstBlock		      "filterux4"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      1
-      DstBlock		      "Add"
-      DstPort		      2
+      DstBlock		      "uxorig"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Add"
       SrcPort		      1
       Points		      [230, 0; 0, -85]
-      DstBlock		      "Product"
+      DstBlock		      "uxact"
       DstPort		      2
     }
     Line {
       SrcBlock		      "Demux"
       SrcPort		      2
       Points		      [35, 0; 0, 85]
-      DstBlock		      "Add1"
-      DstPort		      2
+      DstBlock		      "uyorig"
+      DstPort		      1
     }
     Line {
       SrcBlock		      "Add1"
       SrcPort		      1
       Points		      [175, 0; 0, -65]
-      DstBlock		      "Product1"
+      DstBlock		      "uyact"
       DstPort		      2
+    }
+    Line {
+      SrcBlock		      "uxorig"
+      SrcPort		      1
+      Points		      [10, 0]
+      Branch {
+	DstBlock		"Add"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 220]
+	DstBlock		"Mux2"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "uyorig"
+      SrcPort		      1
+      Points		      [15, 0]
+      Branch {
+	DstBlock		"Add1"
+	DstPort			2
+      }
+      Branch {
+	Points			[0, 135]
+	DstBlock		"Mux2"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Mux1"
+      SrcPort		      1
+      DstBlock		      "Fcn"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Fcn"
+      SrcPort		      1
+      DstBlock		      "utotal"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "utotal"
+      SrcPort		      1
+      DstBlock		      "utotal2"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "filterux4"
+      SrcPort		      1
+      Points		      [5, 0]
+      Branch {
+	Points			[55, 0]
+	Branch {
+	  DstBlock		  "uaddX"
+	  DstPort		  1
+	}
+	Branch {
+	  Points		  [0, 315]
+	  DstBlock		  "Add"
+	  DstPort		  1
+	}
+      }
+      Branch {
+	Points			[0, -135]
+	DstBlock		"Mux1"
+	DstPort			1
+      }
+    }
+    Line {
+      SrcBlock		      "Product2"
+      SrcPort		      1
+      Points		      [35, 0; 0, -10]
+      DstBlock		      "yposr"
+      DstPort		      3
+    }
+    Line {
+      SrcBlock		      "Product4"
+      SrcPort		      1
+      Points		      [30, 0; 0, 280]
+      DstBlock		      "yposr"
+      DstPort		      2
+    }
+    Line {
+      SrcBlock		      "gainAddY"
+      SrcPort		      1
+      DstBlock		      "filterux5"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "filterux5"
+      SrcPort		      1
+      Points		      [35, 0]
+      Branch {
+	DstBlock		"uaddY"
+	DstPort			1
+      }
+      Branch {
+	Points			[0, -215]
+	DstBlock		"Mux1"
+	DstPort			2
+      }
+    }
+    Line {
+      SrcBlock		      "Mux2"
+      SrcPort		      1
+      DstBlock		      "Fcn1"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "Fcn1"
+      SrcPort		      1
+      DstBlock		      "utotalorig"
+      DstPort		      1
+    }
+    Line {
+      SrcBlock		      "utotalorig"
+      SrcPort		      1
+      DstBlock		      "utotal3"
+      DstPort		      1
     }
   }
 }

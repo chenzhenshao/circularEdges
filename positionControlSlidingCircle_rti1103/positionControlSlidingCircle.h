@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.154
+ * Model version              : 1.169
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Fri Apr 28 09:40:22 2017
+ * C source code generated on : Mon May 01 10:54:31 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -813,6 +813,7 @@ typedef struct {
   real_T VectorConcatenate_h[2];       /* '<S15>/Vector Concatenate' */
   real_T Kpepsilond1[2];               /* '<Root>/Kp epsilond1' */
   real_T gainAddX;                     /* '<Root>/gainAddX' */
+  real_T filterux4;                    /* '<Root>/filterux4' */
   real_T xd;                           /* '<Root>/differentiated1' */
   real_T filterux2;                    /* '<Root>/filterux2' */
   real_T yd;                           /* '<Root>/differentiated' */
@@ -853,18 +854,25 @@ typedef struct {
   real_T Add2[2];                      /* '<S16>/Add2' */
   real_T MathFunction_g[2];            /* '<S29>/Math Function' */
   real_T matrixmult1[2];               /* '<S16>/matrix mult1' */
+  real_T uxorig;                       /* '<Root>/uxorig' */
   real_T Add_h2;                       /* '<Root>/Add' */
-  real_T Product;                      /* '<Root>/Product' */
+  real_T uxact;                        /* '<Root>/uxact' */
   real_T DAGainY;                      /* '<Root>/DA GainY' */
   real_T Saturation;                   /* '<Root>/Saturation' */
   real_T filterux;                     /* '<Root>/filterux' */
-  real_T gainAddY;                     /* '<Root>/gainAddY' */
+  real_T uyorig;                       /* '<Root>/uyorig' */
   real_T Add1_o;                       /* '<Root>/Add1' */
-  real_T Product1;                     /* '<Root>/Product1' */
+  real_T uyact;                        /* '<Root>/uyact' */
   real_T DAGainY1;                     /* '<Root>/DA GainY1' */
   real_T Saturation1;                  /* '<Root>/Saturation1' */
   real_T filterux1;                    /* '<Root>/filterux1' */
+  real_T gainAddY;                     /* '<Root>/gainAddY' */
+  real_T filterux5;                    /* '<Root>/filterux5' */
+  real_T Fcn;                          /* '<Root>/Fcn' */
+  real_T Fcn1;                         /* '<Root>/Fcn1' */
   real_T currentNegated;               /* '<Root>/currentNegated' */
+  real_T utotal;                       /* '<Root>/utotal' */
+  real_T utotalorig;                   /* '<Root>/utotalorig' */
   real_T SFunction;                    /* '<S3>/S-Function' */
   real_T ADCGain;                      /* '<Root>/ADC Gain' */
   real_T SFunction_g;                  /* '<S4>/S-Function' */
@@ -883,10 +891,13 @@ typedef struct {
 /* Block states (auto storage) for system '<Root>' */
 typedef struct {
   real_T DiscreteTimeIntegrator_DSTATE;/* '<Root>/Discrete-Time Integrator' */
+  real_T filterux4_DSTATE;             /* '<Root>/filterux4' */
   real_T filterux2_DSTATE;             /* '<Root>/filterux2' */
   real_T filterux3_DSTATE;             /* '<Root>/filterux3' */
   real_T filterux_DSTATE;              /* '<Root>/filterux' */
   real_T filterux1_DSTATE;             /* '<Root>/filterux1' */
+  real_T filterux5_DSTATE;             /* '<Root>/filterux5' */
+  real_T filterux4_tmp;                /* '<Root>/filterux4' */
   real_T filterux2_tmp;                /* '<Root>/filterux2' */
   real_T filterux3_tmp;                /* '<Root>/filterux3' */
   real_T Pseudoinverse_X[4];           /* '<S16>/Pseudoinverse' */
@@ -897,6 +908,7 @@ typedef struct {
   real_T Pseudoinverse_V[4];           /* '<S16>/Pseudoinverse' */
   real_T filterux_tmp;                 /* '<Root>/filterux' */
   real_T filterux1_tmp;                /* '<Root>/filterux1' */
+  real_T filterux5_tmp;                /* '<Root>/filterux5' */
   struct {
     void *LoggedData;
   } thetaScope_PWORK;                  /* '<S10>/thetaScope' */
@@ -931,10 +943,10 @@ struct Parameters_positionControlSlidi_ {
                                         * Referenced by: '<Root>/DA On-Off'
                                         */
   real_T xc_Value;                     /* Expression: xc
-                                        * Referenced by: '<S10>/xc'
+                                        * Referenced by: '<Root>/xc'
                                         */
   real_T yc_Value;                     /* Expression: yc
-                                        * Referenced by: '<S10>/yc'
+                                        * Referenced by: '<Root>/yc'
                                         */
   real_T startX_Value;                 /* Expression: 0
                                         * Referenced by: '<Root>/startX'
@@ -969,12 +981,6 @@ struct Parameters_positionControlSlidi_ {
   real_T rNormal_Value;                /* Expression: rNormal
                                         * Referenced by: '<Root>/rNormal'
                                         */
-  real_T xc_Value_d;                   /* Expression: xc
-                                        * Referenced by: '<Root>/xc'
-                                        */
-  real_T yc_Value_h;                   /* Expression: yc
-                                        * Referenced by: '<Root>/yc'
-                                        */
   real_T EncoderGain_Gain;             /* Expression: 4/5614
                                         * Referenced by: '<S1>/EncoderGain'
                                         */
@@ -986,6 +992,15 @@ struct Parameters_positionControlSlidi_ {
                                         */
   real_T gainAddX_Gain;                /* Expression: 1
                                         * Referenced by: '<Root>/gainAddX'
+                                        */
+  real_T filterux4_InitialStates;      /* Expression: 0
+                                        * Referenced by: '<Root>/filterux4'
+                                        */
+  real_T filterux4_Numerator;          /* Expression: [1-bLP]
+                                        * Referenced by: '<Root>/filterux4'
+                                        */
+  real_T filterux4_Denominator[2];     /* Expression: [1 -bLP]
+                                        * Referenced by: '<Root>/filterux4'
                                         */
   real_T differentiated1_Gain;         /* Expression: 1/Ts
                                         * Referenced by: '<Root>/differentiated1'
@@ -1077,13 +1092,16 @@ struct Parameters_positionControlSlidi_ {
   real_T Kd24_Value;                   /* Expression: Kd(2,2)
                                         * Referenced by: '<Root>/Kd2,4'
                                         */
+  real_T uxorig_Gain;                  /* Expression: 1
+                                        * Referenced by: '<Root>/uxorig'
+                                        */
   real_T DAGainY_Gain;                 /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY'
                                         */
-  real_T Saturation_UpperSat;          /* Expression: 2
+  real_T Saturation_UpperSat;          /* Expression: 5
                                         * Referenced by: '<Root>/Saturation'
                                         */
-  real_T Saturation_LowerSat;          /* Expression: -2
+  real_T Saturation_LowerSat;          /* Expression: -5
                                         * Referenced by: '<Root>/Saturation'
                                         */
   real_T filterux_InitialStates;       /* Expression: 0
@@ -1095,16 +1113,16 @@ struct Parameters_positionControlSlidi_ {
   real_T filterux_Denominator[2];      /* Expression: [1 -bLP]
                                         * Referenced by: '<Root>/filterux'
                                         */
-  real_T gainAddY_Gain;                /* Expression: 1
-                                        * Referenced by: '<Root>/gainAddY'
+  real_T uyorig_Gain;                  /* Expression: 1
+                                        * Referenced by: '<Root>/uyorig'
                                         */
   real_T DAGainY1_Gain;                /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY1'
                                         */
-  real_T Saturation1_UpperSat;         /* Expression: 2
+  real_T Saturation1_UpperSat;         /* Expression: 5
                                         * Referenced by: '<Root>/Saturation1'
                                         */
-  real_T Saturation1_LowerSat;         /* Expression: -2
+  real_T Saturation1_LowerSat;         /* Expression: -5
                                         * Referenced by: '<Root>/Saturation1'
                                         */
   real_T filterux1_InitialStates;      /* Expression: 0
@@ -1119,8 +1137,26 @@ struct Parameters_positionControlSlidi_ {
   real_T ENCReset_Value;               /* Expression: 0
                                         * Referenced by: '<Root>/ENC Reset'
                                         */
+  real_T gainAddY_Gain;                /* Expression: 1
+                                        * Referenced by: '<Root>/gainAddY'
+                                        */
+  real_T filterux5_InitialStates;      /* Expression: 0
+                                        * Referenced by: '<Root>/filterux5'
+                                        */
+  real_T filterux5_Numerator;          /* Expression: [1-bLP]
+                                        * Referenced by: '<Root>/filterux5'
+                                        */
+  real_T filterux5_Denominator[2];     /* Expression: [1 -bLP]
+                                        * Referenced by: '<Root>/filterux5'
+                                        */
   real_T currentNegated_Gain;          /* Expression: -1
                                         * Referenced by: '<Root>/currentNegated'
+                                        */
+  real_T utotal_Gain;                  /* Expression: 1
+                                        * Referenced by: '<Root>/utotal'
+                                        */
+  real_T utotalorig_Gain;              /* Expression: 1
+                                        * Referenced by: '<Root>/utotalorig'
                                         */
   real_T ADCGain_Gain;                 /* Expression: 10
                                         * Referenced by: '<Root>/ADC Gain'

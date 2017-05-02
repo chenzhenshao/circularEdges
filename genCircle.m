@@ -35,8 +35,8 @@ while T(i)<=t1
     thetad(i)=alphades*T(i);
     thetadd(i)=alphades;
     
-    circX(i)=center(1)+rad*cos(theta(i));
-    circY(i)=center(2)+rad*sin(theta(i));
+    circX(i)=rad*cos(theta(i));
+    circY(i)=rad*sin(theta(i));
     circXd(i)=rad*thetad(i)*cos(theta(i)+pi/2);
     circYd(i)=rad*thetad(i)*sin(theta(i)+pi/2);
     circXdd(i)=rad*thetadd(i)*cos(theta(i)+pi/2);
@@ -48,8 +48,8 @@ while T(i)<=t2
     thetad(i)=omegades;
     thetadd(i)=0;
     
-    circX(i)=center(1)+rad*cos(theta(i));
-    circY(i)=center(2)+rad*sin(theta(i));
+    circX(i)=rad*cos(theta(i));
+    circY(i)=rad*sin(theta(i));
     circXd(i)=rad*thetad(i)*cos(theta(i)+pi/2);
     circYd(i)=rad*thetad(i)*sin(theta(i)+pi/2);
     circXdd(i)=rad*thetadd(i)*cos(theta(i)+pi/2);
@@ -61,8 +61,8 @@ while i<=length(T) && T(i)<=t3
     thetad(i)=omegades-alphades*(T(i)-t2);
     thetadd(i)=-alphades;
     
-    circX(i)=center(1)+rad*cos(theta(i));
-    circY(i)=center(2)+rad*sin(theta(i));
+    circX(i)=rad*cos(theta(i));
+    circY(i)=rad*sin(theta(i));
     circXd(i)=rad*thetad(i)*cos(theta(i)+pi/2);
     circYd(i)=rad*thetad(i)*sin(theta(i)+pi/2);
     circXdd(i)=rad*thetadd(i)*cos(theta(i)+pi/2);
