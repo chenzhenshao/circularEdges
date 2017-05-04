@@ -13,8 +13,8 @@ my = 5.572114462326005e-004;
 % cy=0.001005491797519;
 
 %% Circle
-x=[-119.663; -197.352; -276.979; -323.515];
-y=[-277.930; -315.409; -291.850; -199.107];
+x=[-86.730; -153.699; -292.080; -248.103];
+y=[-195.527; -304.506; -279.435; -85.463];
 plot(x,y,'o'), title(' measured points');
 [xc,yc,Re,a] = circfit(x,y);
 th = linspace(0,2*pi,20)';
@@ -36,6 +36,12 @@ rad=Re+0.8;
 kNorm=1*10^-1;
 rNormal=109.08;
 [circX, circY, circXd,circYd, circXdd, circYdd]=genCircle(center,rad,Ts,omegad,alphad);
+% circX=fliplr(circX);
+% circY=fliplr(circY);
+% circXd=fliplr(circXd);
+% circYd=fliplr(circYd);
+% circXdd=fliplr(circXdd);
+% circYdd=fliplr(circYdd);
 factor=1;
 circX=circX(1:floor(length(circX)/factor));
 circY=circY(1:floor(length(circY)/factor));
