@@ -31,7 +31,7 @@ t3=t2+t1;
 T=(0:Ts:t3);
 i=1;
 while T(i)<=t1
-    theta(i)=1/2*alphades*T(i)^2;
+    theta(i)=1/2*alphades*T(i)^2+pi;
     thetad(i)=alphades*T(i);
     thetadd(i)=alphades;
     
@@ -44,7 +44,7 @@ while T(i)<=t1
     i=i+1;
 end
 while T(i)<=t2
-    theta(i)=theta1+omegades*(T(i)-t1);
+    theta(i)=theta1+omegades*(T(i)-t1)+pi;
     thetad(i)=omegades;
     thetadd(i)=0;
     
@@ -57,7 +57,7 @@ while T(i)<=t2
     i=i+1;
 end
 while i<=length(T) && T(i)<=t3
-    theta(i)=theta2+omegades*(T(i)-t2)-1/2*alphades*(T(i)-t2)^2;
+    theta(i)=theta2+omegades*(T(i)-t2)-1/2*alphades*(T(i)-t2)^2+pi;
     thetad(i)=omegades-alphades*(T(i)-t2);
     thetadd(i)=-alphades;
     
