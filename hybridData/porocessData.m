@@ -3,7 +3,11 @@ clear all;
 close all;
 
 % choose file %
+<<<<<<< HEAD
 filenameRoot = 'data5_1_5_26pmspindleon5n';
+=======
+filenameRoot = 'data4_30_9_42pmspindleon10imp';
+>>>>>>> origin/master
 % filename
 % k = 2;      % when the torque is %50 reduced.
 % filename = [filenameRoot,num2str(k)];
