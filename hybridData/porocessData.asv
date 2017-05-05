@@ -14,6 +14,10 @@ filename=filenameRoot;
 % open file
 load(filename);
 dataName = eval(filename);
+Xdata=dataName.Y(1).Data;
+Ydata=dataName.Y(2).Data;
+
+
 plot(dataName.Y(3).Data);
 
 a = 1;
