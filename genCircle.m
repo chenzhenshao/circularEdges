@@ -22,7 +22,7 @@ function [circX, circY, circXd,circYd, circXdd, circYdd]=genCircle(center,rad,Ts
 % end
 % circXdd(i+1)=circXd(i);
 % circYdd(i+1)=circYd(i);
-
+offset=pi;
 t1=omegades/alphades;
 theta1=1/2*alphades*t1^2;
 t2=(2*pi-2*theta1)/omegades+t1;
