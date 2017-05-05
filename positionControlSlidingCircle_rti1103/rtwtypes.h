@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.169
+ * Model version              : 1.170
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Fri May 05 14:06:32 2017
+ * C source code generated on : Fri May 05 14:34:40 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping

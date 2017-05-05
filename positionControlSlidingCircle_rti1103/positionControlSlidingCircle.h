@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.169
+ * Model version              : 1.170
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Fri May 05 14:06:32 2017
+ * C source code generated on : Fri May 05 14:34:40 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -1098,10 +1098,10 @@ struct Parameters_positionControlSlidi_ {
   real_T DAGainY_Gain;                 /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY'
                                         */
-  real_T Saturation_UpperSat;          /* Expression: 5
+  real_T Saturation_UpperSat;          /* Expression: 7
                                         * Referenced by: '<Root>/Saturation'
                                         */
-  real_T Saturation_LowerSat;          /* Expression: -5
+  real_T Saturation_LowerSat;          /* Expression: -7
                                         * Referenced by: '<Root>/Saturation'
                                         */
   real_T filterux_InitialStates;       /* Expression: 0
@@ -1119,10 +1119,10 @@ struct Parameters_positionControlSlidi_ {
   real_T DAGainY1_Gain;                /* Expression: 0.1
                                         * Referenced by: '<Root>/DA GainY1'
                                         */
-  real_T Saturation1_UpperSat;         /* Expression: 5
+  real_T Saturation1_UpperSat;         /* Expression: 7
                                         * Referenced by: '<Root>/Saturation1'
                                         */
-  real_T Saturation1_LowerSat;         /* Expression: -5
+  real_T Saturation1_LowerSat;         /* Expression: -7
                                         * Referenced by: '<Root>/Saturation1'
                                         */
   real_T filterux1_InitialStates;      /* Expression: 0

@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.169"
+    ComputedModelVersion    "1.170"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "daq"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Sun Apr 30 18:05:18 2017"
-  RTWModifiedTimeStamp	  415476316
-  ModelVersionFormat	  "1.%<AutoIncrement:169>"
+  LastModifiedDate	  "Fri May 05 14:24:48 2017"
+  RTWModifiedTimeStamp	  415895085
+  ModelVersionFormat	  "1.%<AutoIncrement:170>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    1467
+    SIDHighWatermark	    1475
     Block {
       BlockType		      SubSystem
       Name		      " EncoderX"
@@ -2470,10 +2470,10 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "RTI Data Store"
-	  SID			  1464
+	  SID			  1472
 	  Tag			  "struct('private',struct('version',struct('dsVer',uint32(2),'dsVerCreation',uint32(2),'RTI',struct('ver','6"
-	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['30"
-	  "-Apr-2017 18:05:18'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
+	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['05"
+	  "-May-2017 14:24:47'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
 	  "lSlidingCircle'}},'data',{{struct('TH',struct('thTaskInfo',struct('taskType',{'TIMER','HWINT','TMRINT','SWINT'},'ta"
 	  "sksNumOf',{1,0,0,0},'srcIds',{{'TIMERA'},{},{},{}},'taskNames',{{['Timer Task 1']},{},{},{}})),'th_tc',struct('data"
 	  "Type','TASK','taskGroupId','','taskGroupList',{{}},'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcI"
@@ -2523,7 +2523,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "RTI Data Store"
-	      SID		      1465
+	      SID		      1473
 	      Ports		      []
 	      Position		      [146, 15, 181, 28]
 	      ForegroundColor	      "white"
@@ -2564,7 +2564,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "RTI Data Store"
-		  SID			  1466
+		  SID			  1474
 		  Ports			  []
 		  Position		  [146, 15, 181, 28]
 		  ForegroundColor	  "white"
@@ -2605,7 +2605,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "RTI Data Store"
-		    SID			    1467
+		    SID			    1475
 		    Ports		    []
 		    Position		    [146, 15, 181, 28]
 		    ForegroundColor	    "white"
@@ -2659,8 +2659,8 @@ Model {
       SID		      1087
       Ports		      [1, 1]
       Position		      [2835, 545, 2865, 575]
-      UpperLimit	      "5"
-      LowerLimit	      "-5"
+      UpperLimit	      "7"
+      LowerLimit	      "-7"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
     }
@@ -2671,8 +2671,8 @@ Model {
       Ports		      [1, 1]
       Position		      [2950, 670, 2980, 700]
       NamePlacement	      "alternate"
-      UpperLimit	      "5"
-      LowerLimit	      "-5"
+      UpperLimit	      "7"
+      LowerLimit	      "-7"
       OutDataType	      "fixdt(1, 16)"
       OutScaling	      "2^0"
     }
