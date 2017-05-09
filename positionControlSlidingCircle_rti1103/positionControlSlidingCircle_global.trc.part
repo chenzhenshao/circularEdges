@@ -29,7 +29,7 @@ group "Labels"
 
 	-- Skipping label "r0"
 
-	p_positionControlSlidingCircle_B_real_T_0[10]
+	p_positionControlSlidingCircle_B_real_T_0[9]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "theta"
@@ -37,7 +37,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/Subsystem2/theta/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[28]
+	p_positionControlSlidingCircle_B_real_T_0[27]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "x"
@@ -47,7 +47,7 @@ group "Labels"
 	}
 	-- Skipping label "xc"
 
-	p_positionControlSlidingCircle_B_real_T_0[46]
+	p_positionControlSlidingCircle_B_real_T_0[45]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "xd"
@@ -63,7 +63,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/xposr/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[51]
+	p_positionControlSlidingCircle_B_real_T_0[50]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "xrd"
@@ -71,7 +71,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/Product8/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[55]
+	p_positionControlSlidingCircle_B_real_T_0[54]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "xrdd"
@@ -79,7 +79,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/Product9/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[33]
+	p_positionControlSlidingCircle_B_real_T_0[32]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "y{Occurence1}"
@@ -87,7 +87,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/ EncoderY/Pos"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[118]
+	p_positionControlSlidingCircle_B_real_T_0[117]
 	{
 	 type:    positionControlSlidingCircle_ArrayDT0_2_2_Col*
 	 alias:   "y{Occurence2}"
@@ -97,7 +97,7 @@ group "Labels"
 	}
 	-- Skipping label "yc"
 
-	p_positionControlSlidingCircle_B_real_T_0[48]
+	p_positionControlSlidingCircle_B_real_T_0[47]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "yd"
@@ -105,7 +105,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/differentiated/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[9]
+	p_positionControlSlidingCircle_B_real_T_0[8]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "yr"
@@ -113,7 +113,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/yposr/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[53]
+	p_positionControlSlidingCircle_B_real_T_0[52]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "yrd"
@@ -121,7 +121,7 @@ group "Labels"
 	 origin:  "positionControlSlidingCircle/Product6/Out1"
 	 flags:   LABEL|READONLY
 	}
-	p_positionControlSlidingCircle_B_real_T_0[57]
+	p_positionControlSlidingCircle_B_real_T_0[56]
 	{
 	 type:    flt(64,IEEE)*
 	 alias:   "yrdd"

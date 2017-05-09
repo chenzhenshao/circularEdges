@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.170
+ * Model version              : 1.171
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Fri May 05 14:34:40 2017
+ * C source code generated on : Tue May 09 11:04:09 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -789,7 +789,6 @@ typedef struct {
   real_T xr;                           /* '<Root>/xposr' */
   real_T circY;                        /* '<Root>/circY' */
   real_T Product4;                     /* '<Root>/Product4' */
-  real_T Product2;                     /* '<Root>/Product2' */
   real_T yr;                           /* '<Root>/yposr' */
   real_T theta;                        /* '<S10>/theta' */
   real_T MatrixConcatenate1[2];        /* '<S14>/Matrix Concatenate1' */
@@ -870,6 +869,7 @@ typedef struct {
   real_T filterux5;                    /* '<Root>/filterux5' */
   real_T Fcn;                          /* '<Root>/Fcn' */
   real_T Fcn1;                         /* '<Root>/Fcn1' */
+  real_T Product2;                     /* '<Root>/Product2' */
   real_T currentNegated;               /* '<Root>/currentNegated' */
   real_T utotal;                       /* '<Root>/utotal' */
   real_T utotalorig;                   /* '<Root>/utotalorig' */
@@ -968,9 +968,6 @@ struct Parameters_positionControlSlidi_ {
                                         */
   real_T circY_table[9854];            /* Expression: circY
                                         * Referenced by: '<Root>/circY'
-                                        */
-  real_T input2_Value;                 /* Expression: circY(1)
-                                        * Referenced by: '<Root>/input2'
                                         */
   real_T zero_Value;                   /* Expression: 0
                                         * Referenced by: '<S15>/zero'
@@ -1148,6 +1145,9 @@ struct Parameters_positionControlSlidi_ {
                                         */
   real_T filterux5_Denominator[2];     /* Expression: [1 -bLP]
                                         * Referenced by: '<Root>/filterux5'
+                                        */
+  real_T input2_Value;                 /* Expression: circY(1)
+                                        * Referenced by: '<Root>/input2'
                                         */
   real_T currentNegated_Gain;          /* Expression: -1
                                         * Referenced by: '<Root>/currentNegated'

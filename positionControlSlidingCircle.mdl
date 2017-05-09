@@ -6,7 +6,7 @@ Model {
     NumRootInports	    0
     NumRootOutports	    0
     ParameterArgumentNames  ""
-    ComputedModelVersion    "1.170"
+    ComputedModelVersion    "1.171"
     NumModelReferences	    0
     NumTestPointedSignals   0
   }
@@ -31,9 +31,9 @@ Model {
   ModifiedByFormat	  "%<Auto>"
   LastModifiedBy	  "daq"
   ModifiedDateFormat	  "%<Auto>"
-  LastModifiedDate	  "Fri May 05 14:24:48 2017"
-  RTWModifiedTimeStamp	  415895085
-  ModelVersionFormat	  "1.%<AutoIncrement:170>"
+  LastModifiedDate	  "Tue May 09 10:59:22 2017"
+  RTWModifiedTimeStamp	  416228359
+  ModelVersionFormat	  "1.%<AutoIncrement:171>"
   ConfigurationManager	  "None"
   SampleTimeColors	  off
   SampleTimeAnnotations	  off
@@ -1157,7 +1157,7 @@ Model {
     ShowPageBoundaries	    off
     ZoomFactor		    "100"
     ReportName		    "simulink-default.rpt"
-    SIDHighWatermark	    1475
+    SIDHighWatermark	    1483
     Block {
       BlockType		      SubSystem
       Name		      " EncoderX"
@@ -2470,10 +2470,10 @@ Model {
 	Block {
 	  BlockType		  SubSystem
 	  Name			  "RTI Data Store"
-	  SID			  1472
+	  SID			  1480
 	  Tag			  "struct('private',struct('version',struct('dsVer',uint32(2),'dsVerCreation',uint32(2),'RTI',struct('ver','6"
-	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['05"
-	  "-May-2017 14:24:47'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
+	  ".5','type','RTI1103')),'access',struct('type','Model','isPerm',1,'created',['16-Oct-2016 18:11:40'],'modified',['09"
+	  "-May-2017 10:59:22'],'location','')),'public',struct('main',struct('data',[]),'sub',struct('name',{{'positionContro"
 	  "lSlidingCircle'}},'data',{{struct('TH',struct('thTaskInfo',struct('taskType',{'TIMER','HWINT','TMRINT','SWINT'},'ta"
 	  "sksNumOf',{1,0,0,0},'srcIds',{{'TIMERA'},{},{},{}},'taskNames',{{['Timer Task 1']},{},{},{}})),'th_tc',struct('data"
 	  "Type','TASK','taskGroupId','','taskGroupList',{{}},'taskSchedulingPolicy','FCFS','taskType','TIMER','blkh',-1,'srcI"
@@ -2523,7 +2523,7 @@ Model {
 	    Block {
 	      BlockType		      SubSystem
 	      Name		      "RTI Data Store"
-	      SID		      1473
+	      SID		      1481
 	      Ports		      []
 	      Position		      [146, 15, 181, 28]
 	      ForegroundColor	      "white"
@@ -2564,7 +2564,7 @@ Model {
 		Block {
 		  BlockType		  SubSystem
 		  Name			  "RTI Data Store"
-		  SID			  1474
+		  SID			  1482
 		  Ports			  []
 		  Position		  [146, 15, 181, 28]
 		  ForegroundColor	  "white"
@@ -2605,7 +2605,7 @@ Model {
 		    Block {
 		    BlockType		    SubSystem
 		    Name		    "RTI Data Store"
-		    SID			    1475
+		    SID			    1483
 		    Ports		    []
 		    Position		    [146, 15, 181, 28]
 		    ForegroundColor	    "white"
@@ -2970,7 +2970,7 @@ Model {
       System {
 	Name			"Subsystem2"
 	Location		[1069, 154, 1614, 988]
-	Open			on
+	Open			off
 	ModelBrowserVisibility	off
 	ModelBrowserWidth	200
 	ScreenColor		"white"
@@ -5454,9 +5454,8 @@ Model {
       BlockType		      Sum
       Name		      "xposr"
       SID		      341
-      Ports		      [3, 1]
+      Ports		      [2, 1]
       Position		      [605, 152, 635, 188]
-      Inputs		      "+++"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
@@ -5483,9 +5482,8 @@ Model {
       BlockType		      Sum
       Name		      "yposr"
       SID		      509
-      Ports		      [3, 1]
+      Ports		      [2, 1]
       Position		      [610, 892, 640, 928]
-      Inputs		      "+++"
       InputSameDT	      off
       OutDataTypeMode	      "Inherit via internal rule"
       OutDataType	      "fixdt(1, 16)"
@@ -5830,7 +5828,7 @@ Model {
     Line {
       SrcBlock		      "Product5"
       SrcPort		      1
-      Points		      [45, 0; 0, -175]
+      Points		      [45, 0; 0, -165]
       DstBlock		      "xposr"
       DstPort		      2
     }
@@ -6177,47 +6175,31 @@ Model {
     Line {
       SrcBlock		      "xc"
       SrcPort		      1
-      Points		      [20, 0]
+      Points		      [210, 0]
       Branch {
-	Points			[0, 105]
-	DstBlock		"xposr"
-	DstPort			3
+	Points			[160, 0; 0, 135]
+	DstBlock		"Subsystem4"
+	DstPort			2
       }
       Branch {
-	Points			[190, 0]
-	Branch {
-	  Points		  [160, 0; 0, 135]
-	  DstBlock		  "Subsystem4"
-	  DstPort		  2
-	}
-	Branch {
-	  Points		  [0, 520]
-	  DstBlock		  "Subsystem2"
-	  DstPort		  12
-	}
+	Points			[0, 520]
+	DstBlock		"Subsystem2"
+	DstPort			12
       }
     }
     Line {
       SrcBlock		      "yc"
       SrcPort		      1
-      Points		      [0, 0]
+      Points		      [125, 0]
       Branch {
-	Points			[5, 0; 0, 775]
-	DstBlock		"yposr"
-	DstPort			1
+	Points			[260, 0; 0, 105]
+	DstBlock		"Subsystem4"
+	DstPort			3
       }
       Branch {
-	Points			[125, 0]
-	Branch {
-	  Points		  [260, 0; 0, 105]
-	  DstBlock		  "Subsystem4"
-	  DstPort		  3
-	}
-	Branch {
-	  Points		  [0, 485]
-	  DstBlock		  "Subsystem2"
-	  DstPort		  13
-	}
+	Points			[0, 485]
+	DstBlock		"Subsystem2"
+	DstPort			13
       }
     }
     Line {
@@ -6530,14 +6512,12 @@ Model {
     Line {
       SrcBlock		      "Product2"
       SrcPort		      1
-      Points		      [35, 0; 0, -10]
-      DstBlock		      "yposr"
-      DstPort		      3
+      Points		      [35, 0; 0, -10; 45, 0]
     }
     Line {
       SrcBlock		      "Product4"
       SrcPort		      1
-      Points		      [30, 0; 0, 280]
+      Points		      [30, 0; 0, 290]
       DstBlock		      "yposr"
       DstPort		      2
     }
