@@ -21,7 +21,7 @@ Ydata=dataName.Y(2).Data;
 
 
 for i=1:length(Xdata)
-    theta(i)=atan2(Ydata(i)-yc, Xdata(i)-xc)+pi;
+    theta(i)=atan2(Ydata(i)-yc, Xdata(i)-xc);
 end
 
 figure(1);

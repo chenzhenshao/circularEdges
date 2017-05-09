@@ -13,8 +13,8 @@ my = 5.572114462326005e-004;
 % cy=0.001005491797519;
 
 %% Circle
-x=[-38.925; -110.306; -202.993; -265.909];
-y=[-184.627; -307.463; -310.349; -255.060];
+x=[-40.107; -114.334; -203.445; -277.335; -265.452];
+y=[-197.763; -308.875; -310.088; -188.951; -252.261];
 plot(x,y,'o'), title(' measured points');
 [xc,yc,Re,a] = circfit(x,y);
 th = linspace(0,2*pi,20)';
@@ -52,6 +52,10 @@ circYdd=circYdd(1:floor(length(circY)/factor));
 theta=atan2(circY,circX);
 figure(2);
 plot(theta);
+
+for i=1:length(circX)
+    radRef(i)=sqrt((circX(i)-xc)^2+(circY(i)-yc)^2);
+end
 
 r0=rad;
 Kp=[8 0; 0 7]*10^-2;
