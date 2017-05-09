@@ -1,5 +1,6 @@
 %% Fucntion to generate circle
 function [circX, circY, circXd,circYd, circXdd, circYdd]=genCircle(center,rad,Ts,omegades, alphades)
+center=[0;0];
 %center=[x1,y1] rad=radius (all in mm)
 % T=2*pi/thetad;
 % t=(0:Ts:T);
@@ -31,7 +32,7 @@ t3=t2+t1;
 T=(0:Ts:t3);
 i=1;
 while T(i)<=t1
-    theta(i)=1/2*alphades*T(i)^2+pi;
+    theta(i)=1/2*alphades*T(i)^2+offset;
     thetad(i)=alphades*T(i);
     thetadd(i)=alphades;
     
@@ -44,7 +45,7 @@ while T(i)<=t1
     i=i+1;
 end
 while T(i)<=t2
-    theta(i)=theta1+omegades*(T(i)-t1)+pi;
+    theta(i)=theta1+omegades*(T(i)-t1)+offset;
     thetad(i)=omegades;
     thetadd(i)=0;
     
@@ -57,7 +58,7 @@ while T(i)<=t2
     i=i+1;
 end
 while i<=length(T) && T(i)<=t3
-    theta(i)=theta2+omegades*(T(i)-t2)-1/2*alphades*(T(i)-t2)^2+pi;
+    theta(i)=theta2+omegades*(T(i)-t2)-1/2*alphades*(T(i)-t2)^2+offset;
     thetad(i)=omegades-alphades*(T(i)-t2);
     thetadd(i)=-alphades;
     

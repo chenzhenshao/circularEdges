@@ -3,9 +3,9 @@
  *
  * Real-Time Workshop code generation for Simulink model "positionControlSlidingCircle.mdl".
  *
- * Model version              : 1.171
+ * Model version              : 1.173
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Tue May 09 11:04:09 2017
+ * C source code generated on : Tue May 09 16:03:14 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -302,9 +302,25 @@ static void positionControlSlidingCircle_output(int_T tid)
     positionControlSlidingCircle_B.circX1 *
     positionControlSlidingCircle_P.startX_Value;
 
-  /* Sum: '<Root>/xposr' */
-  positionControlSlidingCircle_B.xr = positionControlSlidingCircle_B.Product3 +
-    positionControlSlidingCircle_B.Product5;
+  /* Sum: '<Root>/xposr' incorporates:
+   *  Constant: '<Root>/xc'
+   */
+  positionControlSlidingCircle_B.xr = (positionControlSlidingCircle_B.Product3 +
+    positionControlSlidingCircle_B.Product5) +
+    positionControlSlidingCircle_P.xc_Value;
+
+  /* Logic: '<Root>/Logical Operator' incorporates:
+   *  Constant: '<Root>/startX'
+   */
+  positionControlSlidingCircle_B.LogicalOperator =
+    !(positionControlSlidingCircle_P.startX_Value != 0.0);
+
+  /* Product: '<Root>/Product2' incorporates:
+   *  Constant: '<Root>/input2'
+   */
+  positionControlSlidingCircle_B.Product2 =
+    positionControlSlidingCircle_P.input2_Value * (real_T)
+    positionControlSlidingCircle_B.LogicalOperator;
 
   /* LookupNDDirect: '<Root>/circY'
    *
@@ -330,9 +346,12 @@ static void positionControlSlidingCircle_output(int_T tid)
     positionControlSlidingCircle_P.startX_Value *
     positionControlSlidingCircle_B.circY;
 
-  /* Sum: '<Root>/yposr' */
-  positionControlSlidingCircle_B.yr = 0.0 +
-    positionControlSlidingCircle_B.Product4;
+  /* Sum: '<Root>/yposr' incorporates:
+   *  Constant: '<Root>/yc'
+   */
+  positionControlSlidingCircle_B.yr = (positionControlSlidingCircle_B.Product2 +
+    positionControlSlidingCircle_B.Product4) +
+    positionControlSlidingCircle_P.yc_Value;
 
   /* Fcn: '<S10>/theta' incorporates:
    *  Constant: '<Root>/xc'
@@ -2080,19 +2099,6 @@ static void positionControlSlidingCircle_output(int_T tid)
 
   positionControlSlidingCircle_B.Fcn1 = denAccum;
 
-  /* Logic: '<Root>/Logical Operator' incorporates:
-   *  Constant: '<Root>/startX'
-   */
-  positionControlSlidingCircle_B.LogicalOperator =
-    !(positionControlSlidingCircle_P.startX_Value != 0.0);
-
-  /* Product: '<Root>/Product2' incorporates:
-   *  Constant: '<Root>/input2'
-   */
-  positionControlSlidingCircle_B.Product2 =
-    positionControlSlidingCircle_P.input2_Value * (real_T)
-    positionControlSlidingCircle_B.LogicalOperator;
-
   /* Gain: '<Root>/currentNegated' */
   positionControlSlidingCircle_B.currentNegated =
     positionControlSlidingCircle_P.currentNegated_Gain *
@@ -2154,7 +2160,7 @@ static void positionControlSlidingCircle_output(int_T tid)
   tmp_0 = rt_pow_snf(denAccum, 2.0);
   denAccum = positionControlSlidingCircle_B.GainFz;
   denAccum = rt_pow_snf(denAccum, 2.0);
-  denAccum += tmp + tmp_0;
+  denAccum = (tmp + tmp_0) + 0.0 * denAccum;
   if (denAccum < 0.0) {
     denAccum = -sqrt(-denAccum);
   } else {

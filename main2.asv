@@ -13,8 +13,8 @@ my = 5.572114462326005e-004;
 % cy=0.001005491797519;
 
 %% Circle
-x=[-40.484; -131.669; -212.582; -275.146; -226.163];
-y=[-238.679; -321.970;];
+x=[-59.676; -169.534; -256.249; -171.510];
+y=[-265.937; -321.574; -273.885; -82.995];
 plot(x,y,'o'), title(' measured points');
 [xc,yc,Re,a] = circfit(x,y);
 th = linspace(0,2*pi,20)';
@@ -32,7 +32,7 @@ alphad=0.4;
 Ts=0.001;
 %% Generate trajectory
 center=[xc;yc];
-rad=Re+0.8;
+rad=Re;
 kNorm=1*10^-1;
 rNormal=109.08;
 [circX, circY, circXd,circYd, circXdd, circYdd]=genCircle(center,rad,Ts,omegad,alphad);
@@ -49,9 +49,13 @@ circXd=circXd(1:floor(length(circX)/factor));
 circYd=circYd(1:floor(length(circY)/factor));
 circXdd=circXdd(1:floor(length(circX)/factor));
 circYdd=circYdd(1:floor(length(circY)/factor));
-theta=atan2(circY,circX);
+theta=atan2(circY-yc,circX-xc);
 figure(2);
 plot(theta);
+
+for i=1:length(circX)
+    radRef(i)=sqrt((circX(i)-xc)^2+(circY(i)-yc)^2);
+end
 
 r0=rad;
 Kp=[8 0; 0 7]*10^-2;
@@ -60,4 +64,34 @@ M=[mx 0; 0 my];
 Minv=inv(M);
 Ks=[7 0;0 0.7]*10^-2;
 Wcut = 150; bLP  = exp(-Wcut*2*pi*Ts);
-slbuild('positionControlSlidingCircle');
+% slbuild('positionControlSlidingCircle');
+
+
+filenameRoot = 'refcheck';
+mean=1.76;
+% filename
+% k = 2;      % when the torque is %50 reduced.
+% filename = [filenameRoot,num2str(k)];
+filename=filenameRoot;
+
+% open file
+load(filename);
+dataName = eval(filename);
+% dataName=n2_09pm;
+XExpData=dataName.Y(1).Data;
+YExpData=dataName.Y(2).Data;
+XExpRef=dataName.Y(6).Data;
+YExpRef=dataName.Y(7).Data;
+[xcExp,ycExp,ReExp,aExp] = circfit(XExpRef,YExpRef);
+
+
+for i=1:length(Xdata)
+%     theta(i)=atan2(Ydata(i)-yc, Xdata(i)-xc);
+    rad(i)=sqrt((XExpData(i)-xc)^2+(YExpData(i)-yc)^2);
+    rdes(i)=sqrt((XExpRef(i)-xc)^2+(YExpRef(i)-yc)^2);
+end
+
+plot(rad);
+hold on;
+plot(rdes);
+plot(

@@ -4,7 +4,7 @@ clear all;
 
 % choose file %
 
-filenameRoot = 'spindleon_2_55pm';
+filenameRoot = 'check7_5_9';
 mean=1.76;
 % filename
 % k = 2;      % when the torque is %50 reduced.
@@ -17,9 +17,9 @@ dataName = eval(filename);
 % dataName=n2_09pm;
 Xdata=dataName.Y(1).Data;
 Ydata=dataName.Y(2).Data;
-Xref=dataName.Y(6).Data;
-Yref=dataName.Y(7).Data;
-[xc,yc,Re,a] = circfit(Xdata,Ydata);
+Xref=dataName.Y(11).Data;
+Yref=dataName.Y(12).Data;
+[xc,yc,Re,a] = circfit(Xref,Yref);
 
 
 for i=1:length(Xdata)
@@ -32,6 +32,8 @@ figure(1);
 plot(theta,dataName.Y(3).Data-mean);
 figure(2);
 plot(dataName.Y(3).Data-mean);
+hold on;
+plot(Xdata,'r');
 a = 1;
 b = ones(1,100)/100;
 y = filter(b,a,dataName.Y(3).Data-mean);
