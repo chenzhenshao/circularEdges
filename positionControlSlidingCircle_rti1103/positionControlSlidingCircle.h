@@ -5,7 +5,7 @@
  *
  * Model version              : 1.173
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Tue May 09 16:03:14 2017
+ * C source code generated on : Wed May 10 16:26:30 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -963,13 +963,13 @@ struct Parameters_positionControlSlidi_ {
   real_T index_Gain;                   /* Expression: 1/Ts
                                         * Referenced by: '<Root>/index'
                                         */
-  real_T circX1_table[9854];           /* Expression: circX
+  real_T circX1_table[7236];           /* Expression: circX
                                         * Referenced by: '<Root>/circX1'
                                         */
   real_T input2_Value;                 /* Expression: circY(1)
                                         * Referenced by: '<Root>/input2'
                                         */
-  real_T circY_table[9854];            /* Expression: circY
+  real_T circY_table[7236];            /* Expression: circY
                                         * Referenced by: '<Root>/circY'
                                         */
   real_T zero_Value;                   /* Expression: 0
@@ -1026,16 +1026,16 @@ struct Parameters_positionControlSlidi_ {
   real_T filterux3_Denominator[2];     /* Expression: [1 -bLP]
                                         * Referenced by: '<Root>/filterux3'
                                         */
-  real_T circXd1_table[9854];          /* Expression: circXd
+  real_T circXd1_table[7236];          /* Expression: circXd
                                         * Referenced by: '<Root>/circXd1'
                                         */
-  real_T circYd_table[9854];           /* Expression: circYd
+  real_T circYd_table[7236];           /* Expression: circYd
                                         * Referenced by: '<Root>/circYd'
                                         */
-  real_T circXdd1_table[9854];         /* Expression: circXdd
+  real_T circXdd1_table[7236];         /* Expression: circXdd
                                         * Referenced by: '<Root>/circXdd1'
                                         */
-  real_T circYdd_table[9854];          /* Expression: circYdd
+  real_T circYdd_table[7236];          /* Expression: circYdd
                                         * Referenced by: '<Root>/circYdd'
                                         */
   real_T r0_Value;                     /* Expression: r0

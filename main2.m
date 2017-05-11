@@ -13,8 +13,8 @@ my = 5.572114462326005e-004;
 % cy=0.001005491797519;
 
 %% Circle
-x=[-39.190; -98.134; -186.163; -245.298; -147.894];
-y=[-186.895; -307.146; -320.993; -289.076; -81.024];
+x=[-39.827; -157.874; -271.401; -187.914; -275.410];
+y=[-212.137; -321.030; -235.368; -88.914; -216.377];
 plot(x,y,'o'), title(' measured points');
 [xc,yc,Re,a] = circfit(x,y);
 th = linspace(0,2*pi,20)';
@@ -27,8 +27,8 @@ xlabel x, ylabel y
 axis equal
 
 %% Other parameters
-omegad=0.8;
-alphad=0.4;
+omegad=1.2;
+alphad=0.6;
 Ts=0.001;
 %% Generate trajectory
 center=[xc;yc];
@@ -49,6 +49,12 @@ circXd=circXd(1:floor(length(circX)/factor));
 circYd=circYd(1:floor(length(circY)/factor));
 circXdd=circXdd(1:floor(length(circX)/factor));
 circYdd=circYdd(1:floor(length(circY)/factor));
+% circX=[circX, circX];
+% circY=[circY, circY];
+% circXd=[circXd, circXd];
+% circYd=[circYd, circYd];
+% circXdd=[circXdd, circXdd];
+% circYdd=[circYdd, circYdd];
 theta=atan2(circY,circX);
 figure(2);
 plot(theta);

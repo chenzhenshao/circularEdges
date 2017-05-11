@@ -5,7 +5,7 @@
  *
  * Model version              : 1.173
  * Real-Time Workshop version : 7.5  (R2010a)  25-Jan-2010
- * C source code generated on : Tue May 09 16:03:14 2017
+ * C source code generated on : Wed May 10 16:26:30 2017
  *
  * Target selection: rti1103.tlc
  * Note: GRT includes extra infrastructure and instrumentation for prototyping
@@ -283,7 +283,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circX1':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -327,7 +327,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circY':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -569,7 +569,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circXd1':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -592,7 +592,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circYd':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -616,7 +616,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circXdd1':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -639,7 +639,7 @@ static void positionControlSlidingCircle_output(int_T tid)
    * About '<Root>/circYdd':
    *  1-dimensional Direct Look-Up returning a Scalar
    */
-  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 9853.0);
+  denAccum = rt_SATURATE(positionControlSlidingCircle_B.index, 0.0, 7235.0);
   if (rtIsNaN(denAccum) || rtIsInf(denAccum)) {
     denAccum = 0.0;
   } else {
@@ -2388,7 +2388,7 @@ void MdlInitializeSizes(void)
   positionControlSlidingCircle_M->Sizes.numSampTimes = (1);/* Number of sample times */
   positionControlSlidingCircle_M->Sizes.numBlocks = (176);/* Number of blocks */
   positionControlSlidingCircle_M->Sizes.numBlockIO = (105);/* Number of block outputs */
-  positionControlSlidingCircle_M->Sizes.numBlockPrms = (59207);/* Sum of parameter "widths" */
+  positionControlSlidingCircle_M->Sizes.numBlockPrms = (43499);/* Sum of parameter "widths" */
 }
 
 void MdlInitializeSampleTimes(void)
